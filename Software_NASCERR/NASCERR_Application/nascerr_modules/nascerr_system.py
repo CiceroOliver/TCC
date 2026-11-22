@@ -1,5 +1,5 @@
 import json
-from enum import Enum
+from enum import Enum, IntEnum
 import struct
 
 
@@ -8,55 +8,17 @@ class OPERATION_EXP(Enum):
     Enum for Operating Logs.
     """
     OP_EXP_OK = 0xA1
-    OP_EXP_BUSY = 0xA2
-    OP_EXP_RUNNING = 0xA3
-    OP_EXP_RECEIVE_COMMAND = 0xA4
-    OP_EXP_TRANSMIT_RESPONSE = 0xA5
-    OP_EXP_TRANSMIT_FINISH = 0xA6
-    OP_EXP_FINISH = 0xA7
-    OP_EXP_FAIL = 0xA8
+    OP_EXP_RUNNING = 0xA2
+    OP_EXP_BUSY = 0xA3
+    OP_EXP_FAIL = 0xA4
 
     @property
     def description(self):
         descriptions = {
-            OPERATION_EXP.OP_EXP_OK: "Experiment Operation OK.",
-            OPERATION_EXP.OP_EXP_BUSY: "Experiment is busy.",
+            OPERATION_EXP.OP_EXP_OK: "No experiment in execution.",
             OPERATION_EXP.OP_EXP_RUNNING: "Experiment is running.",
-            OPERATION_EXP.OP_EXP_RECEIVE_COMMAND: "Command received.",
-            OPERATION_EXP.OP_EXP_TRANSMIT_RESPONSE: "Telemetry data transmitted.",
-            OPERATION_EXP.OP_EXP_TRANSMIT_FINISH: "Telemetry data transmission finished.",
-            OPERATION_EXP.OP_EXP_FINISH: "Operation has finished.",
+            OPERATION_EXP.OP_EXP_BUSY: "System is busy.",
             OPERATION_EXP.OP_EXP_FAIL: "Operation failed.",
-        }
-        return descriptions.get(self, "Unknown status")
-
-
-class STRUCTURE_OPERATION_EXP:
-
-    def __init__(self, id: int = 0, page: int = 0, stat: OPERATION_EXP = OPERATION_EXP.OP_EXP_OK):
-        self.id = id
-        self.page = page
-        self.stat = stat
-
-    def __repr__(self):
-        return (
-            f"STRUCTURE_OPERATION_EXP(id={self.id}, page={self.page}, "
-            f"stat={self.stat.name}"
-        )
-
-    def to_dict(self):
-        return {
-            "id": self.id,
-            "page": self.page,
-            "stat": self.stat.value,
-        }
-
-    @property
-    def description(self):
-        descriptions = {
-            STRUCTURE_OPERATION_EXP.id: "ID of the operation.",
-            STRUCTURE_OPERATION_EXP.page: "Page of the operation.",
-            STRUCTURE_OPERATION_EXP.stat: "Status of the operation."
         }
         return descriptions.get(self, "Unknown status")
 
@@ -65,14 +27,20 @@ class REQUEST_EXP(Enum):
     """
     Enum for Request Logs.
     """
-    REQ_EXP_NOREQUEST = 0xA1
-    REQ_EXP_TXRESULT = 0xA2
+    REQ_EXP_NO_REQUEST = 0xA1
+    REQ_EXP_CMD_RECEIVED = 0xA2
+    REQ_EXP_READ_PROCESSING = 0xA3
+    REQ_EXP_TX_RESULT = 0xA4
+    REQ_EXP_FAIL = 0xA5
 
     @property
     def description(self):
         descriptions = {
-            REQUEST_EXP.REQ_EXP_NOREQUEST: "No request has been made.",
-            REQUEST_EXP.REQ_EXP_TXRESULT: "Transmission result request.",
+            REQUEST_EXP.REQ_EXP_NO_REQUEST: "No request has been made.",
+            REQUEST_EXP.REQ_EXP_CMD_RECEIVED: "Read CMD was received.",
+            REQUEST_EXP.REQ_EXP_READ_PROCESSING: "Awating the data to be processed.",
+            REQUEST_EXP.REQ_EXP_TX_RESULT: "Transmission result request.",
+            REQUEST_EXP.REQ_EXP_FAIL: "A failed occured."
         }
         return descriptions.get(self, "Unknown request")
 
@@ -84,18 +52,16 @@ class OPERATION_HW(Enum):
     """
     OP_HW_OK = 0xB1
     OP_HW_SLEEP = 0xB2
-    OP_HW_RECEIVED_COMMAND = 0xB3
-    OP_HW_TRANSMIT_RESPONSE = 0xB4
-    OP_HW_TRANSMIT_FINISH = 0xB5
+    OP_HW_BUSY = 0xB3
+    OP_HW_FAIL = 0xB4
 
     @property
     def description(self):
         descriptions = {
             OPERATION_HW.OP_HW_OK: "System is awake",
             OPERATION_HW.OP_HW_SLEEP: "System is sleeping",
-            OPERATION_HW.OP_HW_RECEIVED_COMMAND: "Command received",
-            OPERATION_HW.OP_HW_TRANSMIT_RESPONSE: "Hardware data transmitted",
-            OPERATION_HW.OP_HW_TRANSMIT_FINISH: "Hardware data transmission finished",
+            OPERATION_HW.OP_HW_BUSY: "System is busy",
+            OPERATION_HW.OP_HW_FAIL: "Hardware failed",
         }
         return descriptions.get(self, "Unknown status")
 
@@ -105,20 +71,20 @@ class REQUEST_HW(Enum):
     Enum for Request Logs.
     """
 
-    REQ_HW_NOREQUEST = 0xB1
-    REQ_HW_TRANSMIT_TEMPERATURE = 0xB2
-    REQ_HW_TRANSMIT_INDIVIDUAL_CURRENTS = 0xB3
-    REQ_HW_TRANSMIT_INDIVIDUAL_POWER = 0xB4
-    REQ_HW_TRANSMIT_TOTAL_POWER = 0xB5
+    REQ_HW_NO_REQUEST = 0xB1
+    REQ_HW_TX_TEMP = 0xB2
+    REQ_HW_TX_CURRENTS = 0xB3
+    REQ_HW_TX_POWERS = 0xB4
+    REQ_HW_TX_TOT_PWR = 0xB5
 
     @property
     def description(self):
         descriptions = {
-            REQUEST_HW.REQ_HW_NOREQUEST: "No request has been made.",
-            REQUEST_HW.REQ_HW_TRANSMIT_TEMPERATURE: "Request Temperature",
-            REQUEST_HW.REQ_HW_TRANSMIT_INDIVIDUAL_CURRENTS: "Request Individual Currents",
-            REQUEST_HW.REQ_HW_TRANSMIT_INDIVIDUAL_POWER: "Request Individual Power",
-            REQUEST_HW.REQ_HW_TRANSMIT_TOTAL_POWER: "Request Total Power"
+            REQUEST_HW.REQ_HW_NO_REQUEST: "No request has been made.",
+            REQUEST_HW.REQ_HW_TX_TEMP: "Request Temperature",
+            REQUEST_HW.REQ_HW_TX_CURRENTS: "Request Individual Currents",
+            REQUEST_HW.REQ_HW_TX_POWERS: "Request Individual Power",
+            REQUEST_HW.REQ_HW_TX_TOT_PWR: "Request Total Power"
         }
         return descriptions.get(self, "Unknown request")
 
@@ -129,33 +95,63 @@ class NASCERR_STATUS:
     """
 
     def __init__(self,
-                 structure_exp: STRUCTURE_OPERATION_EXP,
+                 op_exp: OPERATION_EXP,
                  op_hw: OPERATION_HW,
                  req_exp: REQUEST_EXP,
-                 req_hw: REQUEST_HW):
-        self.structure_exp = structure_exp
+                 req_hw: REQUEST_HW,
+                 fail_flag: int):
+        self.op_exp = op_exp
         self.op_hw = op_hw
         self.req_exp = req_exp
         self.req_hw = req_hw
+        self.fail_flag = fail_flag
 
     def __repr__(self):
         return (
             f"NASCERR_STATUS(\n"
-            f"  structure_exp={self.structure_exp},\n"
+            f"  op_exp={self.op_exp.name},\n"
             f"  op_hw={self.op_hw.name},\n"
             f"  req_exp={self.req_exp.name},\n"
             f"  req_hw={self.req_hw.name},\n"
+            f"  fail_flag={self.fail_flag}\n"
+            f")"
         )
 
     def to_dict(self):
+        current_names = [
+            "current_1v2",
+            "current_2v5",
+            "current_2v5_vpp",
+            "current_3v3",
+            "current_3v3_FPGA",
+        ]
+
+        current_fail_bits = self.fail_flag & 0b0011111
+        temperature_fail = (self.fail_flag >> 5) & 0b1
+        queue_bits = (self.fail_flag >> 6) & 0b11
+
+        queue_status_map = {
+            0b00: "below_50_percent",
+            0b01: "between_50_and_75_percent",
+            0b10: "between_75_and_100_percent",
+            0b11: "100_percent",
+        }
+
+        current_flags = {
+            name: bool((current_fail_bits >> i) & 0b1)
+            for i, name in enumerate(current_names)
+        }
+
+        active_current_failures = [
+            name for name, failed in current_flags.items() if failed
+        ]
+
         return {
             "operation": {
-                "STRUCTURE_EXP": {
-                    "id_value": self.structure_exp.id,
-                    "page_value": self.structure_exp.page,
-                    "stat_name": self.structure_exp.stat.name,
-                    "stat_value": self.structure_exp.stat.value,
-                    "stat_description": self.structure_exp.stat.description,
+                "EXP": {
+                    "name": self.op_exp.name,
+                    "value": self.op_exp.value,
+                    "description": self.op_exp.description,
                 },
                 "HW": {
                     "name": self.op_hw.name,
@@ -174,6 +170,12 @@ class NASCERR_STATUS:
                     "value": self.req_hw.value,
                     "description": self.req_hw.description
                 }
+            },
+            "fail_flag": {
+                "raw": format(self.fail_flag, "08b"),
+                "active_current_failures": active_current_failures,
+                "temperature_fail": bool(temperature_fail),
+                "queue_level_description": queue_status_map.get(queue_bits, "unknown")
             }
         }
 
@@ -183,27 +185,23 @@ class NASCERR_STATUS:
     @classmethod
     def from_list(cls, lst):
         """
-        Constroi uma instancia de NASCERR_STATUS a partir de uma lista de 6 valores:
-        [op_hw, op_exp, op_log, req_hw, req_exp, req_log]
+        Constroi uma instancia de NASCERR_STATUS a partir de uma lista de 5 valores:
+        [op_hw, op_exp, req_exp, req_hw, fail_flag]
 
-        @param lst: Lista contendo exatamente 6 inteiros.
+        @param lst: Lista contendo exatamente 5 inteiros.
         @return: Instância de NASCERR_STATUS.
         """
-        if len(lst) != 9:
+        if len(lst) != 5:
             raise ValueError(
-                "the list must have 9 elements: [id_val_1, id_val_2, id_val_3, id_val_4, block_val, stat_val, req_exp_val, op_hw_val, req_hw_val]")
+                "the list must have 5 elements: [op_exp, req_exp, op_hw, req_hw, fail_flag]")
 
-        id_val_1, id_val_2, id_val_3, id_val_4, block_val, stat_val, req_exp_val, op_hw_val, req_hw_val = lst
+        op_exp_val, op_hw_val, req_exp_val, req_hw_val, fail_flag_val = lst
 
         try:
-            obj = STRUCTURE_OPERATION_EXP(
-                id=(id_val_1 << 8*3 | id_val_2 <<
-                    8*2 | id_val_3 << 8 | id_val_4),
-                page=block_val,
-                stat=OPERATION_EXP(stat_val),
-            )
+            op_exp = OPERATION_EXP(op_exp_val)
         except ValueError:
-            raise ValueError(f"Invalid value for OPERATION_EXP: {stat_val}")
+            raise ValueError(
+                f"Invalid value for OPERATION_EXP: {op_exp_val}, data: {lst}")
 
         try:
             req_exp = REQUEST_EXP(req_exp_val)
@@ -220,9 +218,7 @@ class NASCERR_STATUS:
         except ValueError:
             raise ValueError(f"Invalid value for REQUEST_HW: {req_hw_val}")
 
-        return cls(obj, req_exp, op_hw, req_hw)
-
-# Adicionado novo status
+        return cls(op_exp, op_hw, req_exp, req_hw, fail_flag_val)
 
 
 class LOG_TYPE(Enum):
@@ -231,31 +227,33 @@ class LOG_TYPE(Enum):
     """
     LOG_VOID = 0x00
     LOG_SUCCESS = 0x01
-    LOG_RUNNING_EXPERIMENT = 0x02
-    LOG_RECEIVE_COMMAND = 0x03
-    LOG_RECEIVE_HW_STAT_REQ = 0x04
-    LOG_TRANSMIT_HW_RESPONSE = 0x05
-    LOG_TRANSMIT_HW_FINISH = 0x06
-    LOG_HW_WARN = 0x07
-    LOG_HW_ERROR = 0x08
-    LOG_TRANSMIT_RESPONSE = 0x09
-    LOG_TRANSMIT_FINISH = 0x0A
-    LOG_EXP_EXECUT = 0x0B
-    LOG_EXP_FINNISH = 0x0C
-    LOG_SYSTEM_BUSY = 0x0D
-    LOG_FINISH = 0x0E
-    LOG_FAIL = 0x0F
-    LOG_MAX = 0x10
-    LOG_BOOT_INIRIALIZED = 0x11
-    LOG_BOOT_RECEIVE_COMMAND = 0x12
-    LOG_BOOT_OPERATION = 0x13
+    LOG_RECEIVE_COMMAND = 0x02
+    LOG_RECEIVE_HW_STAT_REQ = 0x03
+    LOG_TRANSMIT_HW_RESPONSE = 0x04
+    LOG_TRANSMIT_HW_FINISH = 0x05
+    LOG_HW_WARN = 0x06
+    LOG_HW_ERROR = 0x07
+    LOG_TRANSMIT_RESPONSE = 0x08
+    LOG_TRANSMIT_FINISH = 0x09
+    LOG_EXP_EXECUT = 0x0A
+    LOG_EXP_FINNISH = 0x0B
+    LOG_SYSTEM_BUSY = 0x0C
+    LOG_FAIL = 0x0D
+    LOG_MAX = 0x0E
+    LOG_BOOT_INIRIALIZED = 0x0F
+    LOG_BOOT_RECEIVE_COMMAND = 0x10
+    LOG_BOOT_OPERATION = 0x11
+    LOG_ROBUST_MEM_HEALTH = 0x12
+    LOG_DB = 0x13
+    LOG_EXP_RECEIVED = 0x14
+    LOG_BOOT = 0x15
+    LOG_CRC = 0x16
 
     @property
     def description(self):
         descriptions = {
             LOG_TYPE.LOG_VOID:                "Sem log",
             LOG_TYPE.LOG_SUCCESS:             "Operacao bem-sucedida.",
-            LOG_TYPE.LOG_RUNNING_EXPERIMENT:  "Experimento em execucao.",
             LOG_TYPE.LOG_RECEIVE_COMMAND:     "Comando recebido e em processamento.",
             LOG_TYPE.LOG_RECEIVE_HW_STAT_REQ: "Comando de recebibo de algum aspecto do hardware.",
             LOG_TYPE.LOG_TRANSMIT_HW_RESPONSE: "Resposta de hardware pronto para ser transmitida.",
@@ -267,12 +265,16 @@ class LOG_TYPE(Enum):
             LOG_TYPE.LOG_EXP_EXECUT:          "Experimento em execucao",
             LOG_TYPE.LOG_EXP_FINNISH:         "Experimento finalizado com sucesso",
             LOG_TYPE.LOG_SYSTEM_BUSY:         "Sistema ocupado, nao pode aceitar novo comando",
-            LOG_TYPE.LOG_FINISH:              "Operacao finalizada (status generico)",
             LOG_TYPE.LOG_FAIL:                "Operacao falhou (erro generico)",
             LOG_TYPE.LOG_MAX:                 "Valor maximo",
             LOG_TYPE.LOG_BOOT_INIRIALIZED:    "Bootloader inicializado",
             LOG_TYPE.LOG_BOOT_RECEIVE_COMMAND: "Bootloader recebeu comando",
             LOG_TYPE.LOG_BOOT_OPERATION:      "Operacao do bootloader em andamento",
+            LOG_TYPE.LOG_ROBUST_MEM_HEALTH:   "Operacao na memoria robusta em andamento",
+            LOG_TYPE.LOG_DB:                  "Operacao de banco de dados (SRAM)",
+            LOG_TYPE.LOG_EXP_RECEIVED:        "Experimento recebido e agendado",
+            LOG_TYPE.LOG_BOOT:                "Operacao de bootloader",
+            LOG_TYPE.LOG_CRC:                 "Operacao de CRC"
         }
         return descriptions.get(self, "Unknown request")
 
@@ -291,16 +293,23 @@ class ERROS_LOGS(Enum):
     ERR_EXP_MEM_OVERFLOW = 0x06
     ERR_EXP_INVALID_REPETITIONS = 0x07
     ERR_EXP_INVALID_DELAY = 0x08
-    ERR_I2C_INIT_FAILED = 0x09
-    ERR_I2C_BUSY = 0x0A
-    ERR_I2C_TRANSFER = 0x0B
-    ERR_I2C_TIMEOUT = 0x0C
-    ERR_FLASH_OPERATION = 0x0D
-    ERR_FLASH_ERASE_FAILED = 0x0E
-    ERR_PROTO_CMD_DECODE = 0x0F
-    ERR_PROTO_SEND_PACKET = 0x10
-    ERR_COMM_GENERAL = 0x11
-    ERR_CMD_INVALID = 0x12
+    ERR_EXP_CONFLICT = 0x09
+    ERR_EXP_SCH_FULL = 0x0A
+    ERR_EXP_READ_OUT_OF_RANGE = 0x0B
+    ERR_I2C_INIT_FAILED = 0x0C
+    ERR_I2C_BUSY = 0x0D
+    ERR_I2C_TRANSFER = 0x0E
+    ERR_I2C_TIMEOUT = 0x0F
+    ERR_FLASH_OPERATION = 0x10
+    ERR_FLASH_ERASE_FAILED = 0x11
+    ERR_PROTO_CMD_DECODE = 0x12
+    ERR_PROTO_SEND_PACKET = 0x13
+    ERR_COMM_GENERAL = 0x14
+    ERR_CMD_INVALID = 0x15
+    ERR_CMD_OVERFLOW = 0x16
+    ERR_CMD_CRC = 0x17
+    ERR_DB_INIT = 0x18
+    ERR_DB_WRITE = 0x19
 
     ERR_BOOT_CMD_SIZE = 0x1A
     ERR_BOOT_CMD_INIT = 0x1B
@@ -309,6 +318,8 @@ class ERROS_LOGS(Enum):
     ERR_BOOT_FLASH_ERASE = 0x1E
     ERR_BOOT_FLASH_WRITE_SIZE = 0x1F
     ERR_BOOT_FLASH_CRC = 0x20
+
+    ERR_DB_READ = 0x21
 
     ERR_BOOT_PKG_OUT_OF_SEQ = 0x22
     ERR_BOOT_PKG_INVALID_VER = 0x23
@@ -319,6 +330,12 @@ class ERROS_LOGS(Enum):
     ERR_BOOT_INVALID_METADATA = 0x26
     ERR_BOOT_SHA_MISMATCH = 0x27
     ERR_BOOT_UNRECOVERABLE = 0x28
+    WARN_HW_TEMPERATURE_THRESHOLD = 0x29
+    WARN_ROBUST_MEM_SRAM_1 = 0x2A
+    WARN_ROBUST_MEM_SRAM_2 = 0x2B
+    WARN_ROBUST_MEM_ENC_DEC = 0x2C
+    ERR_ROBUST_MEM_ENC_DEC = 0x2D
+    WARM_IWDG_RESET = 0x2E
 
     @property
     def description(self):
@@ -332,6 +349,9 @@ class ERROS_LOGS(Enum):
             ERROS_LOGS.ERR_EXP_MEM_OVERFLOW: "Experimento interrompido: estouro de região de memoria",
             ERROS_LOGS.ERR_EXP_INVALID_REPETITIONS: "Experimento interrompido: numero de repeticoes invalido",
             ERROS_LOGS.ERR_EXP_INVALID_DELAY: "Experimento interrompido: valor de delay invalido",
+            ERROS_LOGS.ERR_EXP_CONFLICT: "Experimento em conflito",
+            ERROS_LOGS.ERR_EXP_SCH_FULL: "Agendador cheio",
+            ERROS_LOGS.ERR_EXP_READ_OUT_OF_RANGE: "Tentativa de leitura fora do intervalo de experimentos",
             ERROS_LOGS.ERR_I2C_INIT_FAILED: "Erro na inicialização da comunicacao I2C",
             ERROS_LOGS.ERR_I2C_BUSY: "Comunicação I2C ocupada",
             ERROS_LOGS.ERR_I2C_TRANSFER: "Erro na transmissao/recepção I2C",
@@ -342,6 +362,10 @@ class ERROS_LOGS(Enum):
             ERROS_LOGS.ERR_PROTO_SEND_PACKET: "Falha no envio do pacote",
             ERROS_LOGS.ERR_COMM_GENERAL: "Erro de comunicacao generico",
             ERROS_LOGS.ERR_CMD_INVALID: "Comando invalido ou desconhecido ",
+            ERROS_LOGS.ERR_CMD_OVERFLOW: "Estouro na fila de Comando",
+            ERROS_LOGS.ERR_CMD_CRC: "Erro de CRC no comando",
+            ERROS_LOGS.ERR_DB_INIT: "Erro ao inicializar o banco de dados",
+            ERROS_LOGS.ERR_DB_WRITE: "Erro ao escrever no banco de dados",
             ERROS_LOGS.ERR_BOOT_CMD_SIZE: "Tamanho do comando do bootloader invalido",
             ERROS_LOGS.ERR_BOOT_CMD_INIT: "Erro ao iniciar o comando do bootloader",
             ERROS_LOGS.ERR_BOOT_CMD_DECODE: "Erro ao decodificar o comando do bootloader",
@@ -349,6 +373,7 @@ class ERROS_LOGS(Enum):
             ERROS_LOGS.ERR_BOOT_FLASH_ERASE: "Erro ao apagar a flash",
             ERROS_LOGS.ERR_BOOT_FLASH_WRITE_SIZE: "Tamanho da escrita na flash invalido",
             ERROS_LOGS.ERR_BOOT_FLASH_CRC: "Erro de CRC da flash",
+            ERROS_LOGS.ERR_DB_READ: "Erro ao ler do banco de dados",
             ERROS_LOGS.ERR_BOOT_PKG_OUT_OF_SEQ: "Pacote fora de sequencia",
             ERROS_LOGS.ERR_BOOT_PKG_INVALID_VER: "Versao do pacote invalida",
             ERROS_LOGS.ERR_BOOT_TIMEOUT: "Timeout do bootloader",
@@ -356,6 +381,12 @@ class ERROS_LOGS(Enum):
             ERROS_LOGS.ERR_BOOT_INVALID_METADATA: "Metadados do firmware invalidos",
             ERROS_LOGS.ERR_BOOT_SHA_MISMATCH: "SHA-256 do firmware nao confere",
             ERROS_LOGS.ERR_BOOT_UNRECOVERABLE: "Erro critico no bootloader",
+            ERROS_LOGS.WARN_HW_TEMPERATURE_THRESHOLD: "Alerta de temperatura acima do limite",
+            ERROS_LOGS.WARN_ROBUST_MEM_SRAM_1: "Indica que houve corrupção de um novo bloco na SRAM 1",
+            ERROS_LOGS.WARN_ROBUST_MEM_SRAM_2: "Indica que houve corrupção de um novo bloco na SRAM 2",
+            ERROS_LOGS.WARN_ROBUST_MEM_ENC_DEC: "Indica que houve um erro nos encoders/decoders",
+            ERROS_LOGS.ERR_ROBUST_MEM_ENC_DEC: "Indica que houve a saturação nos erros nos encoders/decoders",
+            ERROS_LOGS.WARM_IWDG_RESET: "Indica que houve um reset pelo watchdog independente (IWDG)"
         }
         return descriptions.get(self, "Unknown error")
 
@@ -394,74 +425,74 @@ class NASCERR_MODE(Enum):
         return json.dumps(self.to_dict(), indent=4)
 
 
-class NASCERR_LOG:
-    """
-    Class representing NASCERR Logs.
-    """
+# class NASCERR_LOG:
+#     """
+#     Class representing NASCERR Logs.
+#     """
 
-    def __init__(self, timestamp: int, type: LOG_TYPE, status: int, error_code: ERROS_LOGS):
-        self.timestamp = timestamp
-        self.type = type
-        self.status = status
-        self.error_code = error_code
+#     def __init__(self, timestamp: int, type: LOG_TYPE, status: int, error_code: ERROS_LOGS):
+#         self.timestamp = timestamp
+#         self.type = type
+#         self.status = status
+#         self.error_code = error_code
 
-    def __repr__(self):
-        return (f"NASCERR_LOG(timestamp={self.timestamp}, "
-                f"type={self.type.name}, "
-                f"status={self.status}, "
-                f"error_code={self.error_code.name})")
+#     def __repr__(self):
+#         return (f"NASCERR_LOG(timestamp={self.timestamp}, "
+#                 f"type={self.type.name}, "
+#                 f"status={self.status}, "
+#                 f"error_code={self.error_code.name})")
 
-    def to_dict(self):
-        return {
-            "timestamp": self.timestamp,
-            "type": {
-                "name": self.type.name,
-                "value": self.type.value,
-                "description": self.type.description
-            },
-            "status": self.status,
-            "error_code": {
-                "name": self.error_code.name,
-                "value": self.error_code.value,
-                "description": self.error_code.description
-            }
-        }
+#     def to_dict(self):
+#         return {
+#             "timestamp": self.timestamp,
+#             "type": {
+#                 "name": self.type.name,
+#                 "value": self.type.value,
+#                 "description": self.type.description
+#             },
+#             "status": self.status,
+#             "error_code": {
+#                 "name": self.error_code.name,
+#                 "value": self.error_code.value,
+#                 "description": self.error_code.description
+#             }
+#         }
 
-    def to_json(self):
-        return json.dumps(self.to_dict(), indent=4)
+#     def to_json(self):
+#         return json.dumps(self.to_dict(), indent=4)
 
-    @classmethod
-    def from_list(cls, lst):
-        """
-        Converte uma lista de 7 elementos em uma instância de NASCERR_LOG.
-        """
-        if len(lst) != 7:
-            raise ValueError(
-                "A lista deve conter exatamente 7 elementos (timestamp, type, status, error_code).")
+#     @classmethod
+#     def from_list(cls, lst):
+#         """
+#         Converte uma lista de 7 elementos em uma instância de NASCERR_LOG.
+#         """
+#         if len(lst) != 7:
+#             raise ValueError(
+#                 "A lista deve conter exatamente 7 elementos (timestamp, type, status, error_code).")
 
-        timestamp_value = int.from_bytes(lst[0:4], byteorder='little')
-        type_value = lst[4]
-        status_value = lst[5]
-        error_code_value = lst[6]
+#         timestamp_value = int.from_bytes(lst[0:4], byteorder='little')
+#         type_value = lst[4]
+#         status_value = lst[5]
+#         error_code_value = lst[6]
 
-        # Verifica se os valores são válidos
-        if type_value not in LOG_TYPE._value2member_map_:
-            raise ValueError(f"Valor invalido para LOG_TYPE: {type_value}")
-        if error_code_value not in ERROS_LOGS._value2member_map_:
-            raise ValueError(
-                f"Valor invalido para ERROS_LOGS: {error_code_value}")
+#         # Verifica se os valores são válidos
+#         if type_value not in LOG_TYPE._value2member_map_:
+#             raise ValueError(f"Valor invalido para LOG_TYPE: {type_value}")
+#         if error_code_value not in ERROS_LOGS._value2member_map_:
+#             raise ValueError(
+#                 f"Valor invalido para ERROS_LOGS: {error_code_value}")
 
-        return cls(timestamp_value, LOG_TYPE(type_value), status_value, ERROS_LOGS(error_code_value))
+#         return cls(timestamp_value, LOG_TYPE(type_value), status_value, ERROS_LOGS(error_code_value))
 
-    @classmethod
-    def parse_multiple(cls, byte_list):
-        logs = []
-        for i in range(0, len(byte_list), 7):
-            chunk = byte_list[i:i+7]
-            if len(chunk) < 7:
-                break  # Ignora pedaço incompleto
-            logs.append(cls.from_list(chunk))
-        return logs
+#     @classmethod
+#     def parse_multiple(cls, byte_list):
+#         logs = []
+#         for i in range(0, len(byte_list), 7):
+#             chunk = byte_list[i:i+7]
+#             if len(chunk) < 7:
+#                 break  # Ignora pedaço incompleto
+#             logs.append(cls.from_list(chunk))
+#         return logs
 
 
 class NASCERR_EXP_STATUS:
@@ -578,3 +609,103 @@ class FlashRegionTypeDef(Enum):
 
     def __repr__(self):
         return f"FlashRegionTypeDef.{self.name}({self.value})"
+
+
+class NASCERR_ACK(IntEnum):
+    """
+    Enum for NASCERR ACK.
+    """
+    ACK_IDLE = 0
+    ACK_WRITE_RECEIVED = 1
+    ACK_CMD_PROCESSING = 2
+    ACK_SUCESS = 3
+    ACK_FAIL = 4
+
+    @property
+    def description(self):
+        descriptions = {
+            NASCERR_ACK.ACK_IDLE: "awaiting command",
+            NASCERR_ACK.ACK_WRITE_RECEIVED: "write received",
+            NASCERR_ACK.ACK_CMD_PROCESSING: "command processing",
+            NASCERR_ACK.ACK_SUCESS: "success",
+            NASCERR_ACK.ACK_FAIL: "fail"
+        }
+        return descriptions.get(self, "Unknown ACK")
+
+    def to_dict(self):
+        return {
+            "ACK info": {
+                "state": self.name,
+                "value": self.value,
+                "description": self.description
+            }
+        }
+
+    def to_json(self):
+        return json.dumps(self.to_dict(), indent=4)
+
+
+class NASCERR_IMAGE_STATUS:
+    # uint8_t  valid;         /* 0xAA = imagem válida gravada      		*/
+    # uint8_t  upload_state;  /* ImgUploadState_t                  		*/
+    # uint8_t  progress_pct;  /* 0-100%                            		*/
+    # uint32_t image_size;	  /* Total size of uploaded or uploading image*/
+    # uint8_t  error_code;    /* ImgErrorCode_t                    		*/
+
+    def __init__(self, valid: int, upload_state: int, progress_pct: int, image_size: int, error_code: int):
+        self.valid = valid
+        self.upload_state = upload_state
+        self.progress_pct = progress_pct
+        self.image_size = image_size
+        self.error_code = error_code
+
+    @property
+    def description(self):
+        valid_desc = "valid" if self.valid == 0xAA else "invalid"
+        upload_state_desc = {
+            0: "IMG_STATE_EMPTY",
+            1: "IMG_STATE_UPLOADING",
+            2: "IMG_STATE_VALIDATING",
+            3: "IMG_STATE_READY",
+            4: "IMG_STATE_ERROR"
+        }.get(self.upload_state, "unknown")
+        error_code_desc = {
+            0: "IMG_ERR_NONE",
+            1: "IMG_ERR_CRC_FRAME",
+            2: "IMG_ERR_CRC_GLOBAL",
+            3: "IMG_ERR_FLASH_WRITE",
+            4: "IMG_ERR_SIZE",
+            5: "IMG_ERR_BAD_FRAME",
+            6: "IMG_ERR_TIMEOUT"
+        }.get(self.error_code, "unknown")
+
+        return (f"Image status: {valid_desc}, upload state: {upload_state_desc}, "
+                f"progress: {self.progress_pct}%, size: {self.image_size} bytes, "
+                f"error code: {error_code_desc}")
+
+    def to_dict(self):
+        return {
+            "valid": self.valid,
+            "upload_state": self.upload_state,
+            "progress_pct": self.progress_pct,
+            "image_size": self.image_size,
+            "error_code": self.error_code,
+            "description": self.description
+        }
+
+    def to_json(self):
+        return json.dumps(self.to_dict(), indent=4)
+
+    @classmethod
+    def from_bytes(cls, data: bytes) -> "NASCERR_IMAGE_STATUS":
+        if len(data) < 8:
+            raise ValueError(
+                f"Data too short: {len(data)} bytes (need at least 8)")
+
+        valid = data[0]
+        upload_state = data[1]
+        progress_pct = data[2]
+        image_size = int.from_bytes(data[3:7], byteorder='little')
+        error_code = data[7]
+
+        return cls(valid, upload_state, progress_pct, image_size, error_code)

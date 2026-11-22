@@ -1,7 +1,7 @@
 import enum
 import json
 import struct
-from typing import List
+from typing import List, Union
 from nascerr_modules.nascerr_command import CmdTypeDef
 from nascerr_modules.nascerr_system import *
 
@@ -16,109 +16,6 @@ class DBStatus(enum.IntEnum):
     CANCELED = 0x03
     NEW_COMMAND = 0x04
     EXECUTED = 0x05
-
-
-class DescriptionError:
-    def __init__(self, addr, result):
-        """
-        Define a description error structure.
-        :param addr: Address (32 bits).
-        :param result: Result (0 - No errors, 1 - Bit error).
-        """
-        self.addr = addr  # 32-bit address
-        self.result = result  # 0 - No errors, 1 - Bit error
-
-    def to_bytes(self):
-        """
-        Serialize the DescriptionError structure to a bytes object.
-        """
-        return struct.pack('<I I', self.addr, self.result)
-
-    def to_dict(self):
-        """
-        Convert the DescriptionError structure to a dictionary.
-        """
-        # Converte o resultado para binário com espaços entre os bits
-        result_binary = ' '.join(f'{self.result:032b}'[i] for i in range(32))
-
-        return {
-            "addr": f'0x{self.addr:08X}',
-            "result": result_binary
-        }
-
-    def to_json(self):
-        """
-        Convert the DescriptionError structure to a JSON string.
-        """
-        return json.dumps(self.to_dict(), indent=4)
-
-
-class NASCERR_RESPONSE:
-    def __init__(self, id, data_length, number_errors, corrected_data, percent_error, command, number_packages, package_number, result_array, error_by_package):
-        """
-        Define the NASCERR_RESPONSE structure.
-        :param id: Identifier for the response message.
-        :param data_length: Length of the data in blocks.
-        :param number_errors: Number of detected errors.
-        :param corrected_data: Amount of data that was corrected.
-        :param result_array: Array of DescriptionError.
-        """
-        self.id = id  # 1 byte
-        self.data_length = data_length  # 4 bytes
-        self.number_errors = number_errors  # 4 bytes
-        self.corrected_data = corrected_data  # 4 bytes
-        self.percent_error = percent_error  # 4 bytes
-        self.command = command  # 1 byte
-        self.number_packages = number_packages  # 2 byte
-        self.package_number = package_number  # 2 byte
-        self.error_by_package = error_by_package  # 2 byte
-        self.result_array = result_array  # Pointer to array of DescriptionError
-
-    def to_bytes(self):
-        """
-        Serialize the NASCERR_RESPONSE structure to a bytes object.
-        """
-        # Serialize the basic fields
-        message = struct.pack(
-            '<B I I I f B H H H',
-            self.id, self.data_length,
-            self.number_errors,
-            self.corrected_data,
-            self.percent_error,
-            self.command,
-            self.number_packages,
-            self.package_number,
-            self.error_by_package)
-
-        # Serialize the result array
-        for result in self.result_array:
-            message += result.to_bytes()
-
-        return message
-
-    def to_dict(self):
-        """
-        Convert the NASCERR_RESPONSE structure to a dictionary.
-        """
-        return {
-            "id": self.id,
-            "data_length": self.data_length,
-            "number_errors": self.number_errors,
-            "corrected_data": self.corrected_data,
-            "percent_error": self.percent_error,
-            "number_packages": self.number_packages,
-            "package_number": self.package_number,
-            "error_by_package": self.error_by_package,
-            "command": CmdTypeDef(self.command).name,
-            "result_array": [result.to_dict() for result in self.result_array]
-        }
-
-    def to_json(self):
-        """
-        Convert the NASCERR_RESPONSE structure to a JSON string.
-        """
-        return json.dumps(self.to_dict(), indent=4)
-
 
 class DBItem:
     """
@@ -443,3 +340,113 @@ class NASCERR_EXPERIMENT:
                 f"time_delta={self.time_delta} ms …)"
             )
         
+class NASCERR_LOG_SUMMARY:
+    """
+    Mirror do sumário de logs que será montado pelo firmware.
+    Payload esperado de 14 bytes:
+        - data_load (u32): Timestamp da criação da área de logs.
+        - total_pages (u16): Quantidade total de páginas de log.
+        - selected_page (u8): Página selecionada pelo comando LOG_SET_PAGE.
+        - page_header (DBItem): Header da página selecionada (7 bytes).
+    """
+    _FMT  = "<I H B"
+    _HDR_SIZE = struct.calcsize(_FMT)
+
+    def __init__(self, *, data_load: int, total_pages: int, selected_page: int, page_header: "DBItem"):
+        self.data_load = data_load
+        self.total_pages = total_pages
+        self.selected_page = selected_page
+        self.page_header = page_header
+
+    @classmethod
+    def from_bytes(cls, data: bytes) -> "NASCERR_LOG_SUMMARY":
+        payload_size = cls._HDR_SIZE + DBItem._SIZE
+        if len(data) < payload_size:
+            raise ValueError(f"Payload do sumário de logs muito curto. Esperado: {payload_size}, Recebido: {len(data)}")
+
+        # Desempacota o cabeçalho
+        data_load, total_pages, selected_page = struct.unpack_from(cls._FMT, data)
+        
+        # Desempacota o DBItem
+        header_bytes = data[cls._HDR_SIZE : payload_size]
+        page_header = DBItem.from_bytes(header_bytes)
+
+        return cls(
+            data_load=data_load,
+            total_pages=total_pages,
+            selected_page=selected_page,
+            page_header=page_header
+        )
+    
+    def to_dict(self) -> dict:
+        return {
+            "data_load": self.data_load,
+            "total_pages": self.total_pages,
+            "selected_page": self.selected_page,
+            "page_header": self.page_header.to_dict(),
+        }
+
+    def to_json(self) -> str:
+        return json.dumps(self.to_dict(), indent=4)
+
+class NASCERR_LOG:
+    _FMT = "<IBBB"
+    _SIZE = struct.calcsize(_FMT)
+
+    def __init__(self, timestamp: int, type_val: int, status: int, error_code_val: int):
+        self.timestamp = timestamp
+        try:
+            self.type = LOG_TYPE(type_val)
+        except ValueError:
+            self.type = LOG_TYPE.LOG_VOID
+        self.status = status
+        try:
+            self.error_code = ERROS_LOGS(error_code_val)
+        except ValueError:
+            self.error_code = ERROS_LOGS.ERR_NONE
+
+    @classmethod
+    def from_bytes(cls, data: Union[bytes, bytearray, memoryview], strict: bool = False):  # <-- troque |
+        b = bytes(data)
+        if len(b) != cls._SIZE:
+            raise ValueError(f"Tamanho incorreto: {len(b)} (esperado {cls._SIZE})")
+
+        ts, tval, status, ecval = struct.unpack(cls._FMT, b)
+
+        if strict:
+            if tval not in LOG_TYPE._value2member_map_:
+                return None
+            if ecval not in ERROS_LOGS._value2member_map_:
+                return None
+
+        return cls(timestamp=ts, type_val=tval, status=status, error_code_val=ecval)
+
+    def to_bytes(self) -> bytes:
+        return struct.pack(self._FMT, self.timestamp, self.type.value, self.status, self.error_code.value)
+
+    def to_dict(self) -> dict:
+        return {
+            "timestamp": self.timestamp,
+            "type": {"name": self.type.name, "value": self.type.value},
+            "status": self.status,
+            "error_code": {"name": self.error_code.name, "value": self.error_code.value},
+        }
+
+    def to_json(self) -> str:
+        return json.dumps(self.to_dict(), indent=4)
+
+    @classmethod
+    def parse_multiple(cls, byte_list: Union[bytes, bytearray, memoryview], strict: bool = False):  # <-- troque |
+        b = bytes(byte_list)
+        out = []
+        for i in range(0, len(b), cls._SIZE):
+            chunk = b[i:i+cls._SIZE]
+            if len(chunk) < cls._SIZE:
+                break
+            obj = cls.from_bytes(chunk, strict=strict)
+            if obj is not None:
+                out.append(obj)
+        return out
+
+    def __repr__(self):
+        return f"NASCERR_LOG(timestamp={self.timestamp}, type={self.type.name}, status={self.status}, error_code={self.error_code.name})"

@@ -1,5 +1,5 @@
 from time import sleep
-from nascerr_modules.nascerr_protocol import Protocol, NASCERR_CTRL, NASCERR_CMD
+from nascerr_modules.nascerr_protocol import Protocol, NASCERR_CMD
 from nascerr_modules.nascerr_system import *
 from typing import List, Dict
 import os
@@ -19,42 +19,6 @@ class Operation:
     def __init__(self, device_name, i2c_address):
         self.communication = Protocol(
             device_name=device_name, i2c_address=i2c_address)
-
-    def send_command(self, cmd_type, id, data_lenght, repeat, write_type, data, mode, delay, offset):
-        ctrl = NASCERR_CTRL(
-            cmd_type=cmd_type,
-            id=id,
-            data_lenght=data_lenght,
-            repeat=repeat,
-            write_type=write_type,
-            data=data,
-            mode=mode,
-            # Convertendo minutos para milissegundos
-            delay=(delay*CONVERT_TIME),
-            offset=offset
-        )
-
-        # if(data_lenght>MAX_WORD):
-        #     return {"error": True, "status": "fail", "log_error": "Data length exceeds the maximum word limit"}
-
-        # result = self.communication.set_command(
-        #     ctrl.cmd_type, ctrl.id, ctrl.data_lenght, ctrl.repeat, ctrl.write_type, ctrl.data, ctrl.mode, ctrl.delay, ctrl.exp_image_ctrl, ctrl.offset)
-
-        result = self.communication.set_command(
-            ctrl.cmd_type, ctrl.id, ctrl.data_lenght, ctrl.repeat, ctrl.write_type, ctrl.data, ctrl.mode, ctrl.delay, ctrl.offset)
-
-        sleep(SLEEP_TIME)
-
-        if result.get("error"):
-            return {"error": result["error"], "status": "fail", "log_error": result["message"]}
-
-        return {
-            "error": result["error"],
-            "message": result["message"],
-            "command_bytes": result.get("command_bytes", ""),
-            "crc16": result.get("crc16", ""),
-            "command_dict": result.get("command_dict", {})
-        }
 
     def get_status(self):
         # sleep(SLEEP_TIME)
@@ -83,125 +47,6 @@ class Operation:
             "data": result["data"],
             "connection_status": "conectado"
         }
-
-    def get_log(self):
-        sleep(SLEEP_TIME)
-        try:
-            result = self.communication.get_log()
-        except ValueError as e:
-            return {
-                "error": "Erro na leitura do log",
-                "status": "fail",
-                "log_error": str(e),
-                "log_status": "falha"
-            }
-        except Exception as e:
-            return {
-                "error": "Erro inesperado na leitura do log",
-                "status": "fail",
-                "log_error": str(e),
-                "log_status": "erro"
-            }
-
-        if not result:
-            return {
-                "error": "Nenhum dado de log disponível",
-                "status": "empty",
-                "log_error": "Lista de logs vazia ou inválida",
-                "log_status": "vazio"
-            }
-
-        return {
-            "error": None,
-            "status": "ok",
-            "data": result,
-            "log_status": "ok"
-        }
-
-    def read_result(self):
-        try:
-            result = self.communication.get_response()
-        except Exception as e:
-            return {"error": True, "status": "fail", "log_error": f"Exception occurred: {str(e)}"}
-
-        sleep(SLEEP_TIME)
-        if result is None:
-            return {"error": True, "status": "fail", "log_error": "No response from the device (NoneType)"}
-
-        if result.get("error"):
-            return {"error": result["error"], "status": "fail", "log_error": result["message"]}
-
-        return {
-            "error": result["error"],
-            "message": result["message"],
-            "data": result["data"]
-        }
-
-    def read_result_byPackages(self, max_retries=3):
-        """
-        Lê resultados em pacotes, com tentativas de leitura em caso de falha.
-
-        :param max_retries: Número máximo de tentativas por pacote.
-        """
-        try:
-            result = self.communication.get_response()
-
-            if result is None:
-                return {"error": True, "status": "fail", "log_error": "No response from the device (NoneType)"}
-            if result.get("error"):
-                return {"error": result["error"], "status": "fail", "log_error": result["message"]}
-
-            response_data = result["data"]
-            number_packages = response_data["number_packages"]
-            if number_packages <= 1:  # Se houver apenas 1 pacote, retorna imediatamente
-                return {
-                    "error": result["error"],
-                    "message": result["message"],
-                    "data": response_data
-                }
-
-            result_array = response_data["result_array"]
-
-            for _ in range(number_packages - 1):
-                # print(f"Recebendo pacote {_ + 1}/{number_packages - 1}")
-                retries = 0
-                while retries < max_retries:
-                    status = self.get_status()
-                    # print("Primeiro status: ")
-                    # print(status)
-                    while (1):
-                        if status["data"]["request"]["name"] == "REQ_TXRESULT" or status["data"]["operation"]["name"] == "OP_OK":
-                            break
-                        status = self.get_status()
-                        # print(status)
-                    next_result = self.communication.get_response()
-                    # print("next_result")
-                    # print(next_result)
-                    if next_result and not next_result.get("error"):
-                        # Pacote recebido com sucesso
-                        result_array.extend(
-                            next_result["data"]["result_array"])
-                        break
-                    else:
-                        retries += 1
-                        if retries >= max_retries:
-                            return {
-                                "error": True,
-                                "status": "fail",
-                                "log_error": next_result["message"] if next_result else f"Failed to receive package {_} after {max_retries} retries"
-                            }
-                        # print(f"Retrying to receive package {_} ({retries}/{max_retries})")
-
-            # print("resulte array: ", result_array)
-            response_data["result_array"] = result_array
-            sleep(SLEEP_TIME)
-            return {
-                "error": result["error"],
-                "message": result["message"],
-                "data": response_data
-            }
-        except Exception as e:
-            return {"error": True, "status": "fail", "log_error": f"Exception occurred: {str(e)}"}
 
     def send_commandNew(
             self,
@@ -342,7 +187,7 @@ class Operation:
     def update_firmware(self, firmware_path: str,
                         new_version: int,
                         packet_size: int = 256,
-                        progress_cb=None,
+                        progress_cb=False,
                         force: bool = 0) -> Dict:
         """
         Atualiza o firmware do dispositivo.
@@ -362,8 +207,8 @@ class Operation:
 
         sha256_hash = calculate_stm32_compatible_sha256(fw)
 
-        total_size = len(fw)  
-        num_pkts = ceil(total_size / (packet_size)) 
+        total_size = len(fw)
+        num_pkts = ceil(total_size / (packet_size))
 
         stat = self.communication.boot_get_status()
         report["steps"].append({"action": "get_status", "result": stat})
@@ -378,13 +223,15 @@ class Operation:
         report["steps"].append({"action": "init_download", "result": init})
         if init["error"]:
             return report
-        
+
+        start_total = time.time()
         start_init = time.time()
         init_stabilized = False
         last_flags = stat["data"]["flags"]
-        
+
         while time.time() - start_init < TIMEOUT_SEC:
             st_init = self.communication.boot_get_status()
+            sleep(SLEEP_TIME)
             report["steps"].append(
                 {"action": "check_init_status", "result": st_init})
             if st_init["error"]:
@@ -406,7 +253,7 @@ class Operation:
                     "post_init_status": st_init
                 }
 
-            time.sleep(SLEEP_TIME)  
+            time.sleep(SLEEP_TIME)
 
         else:
             return {
@@ -436,6 +283,7 @@ class Operation:
 
             while True:
                 st = self.communication.boot_get_status()
+                sleep(SLEEP_TIME)
                 if st["error"]:
                     entry["status_error"] = (
                         f"Failed to read BOOT_STAT after packet {idx}: "
@@ -465,16 +313,57 @@ class Operation:
                     step["packets"].append(entry)
                     return report
 
-                # time.sleep(SLEEP_TIME)
-
             step["packets"].append(entry)
 
-        fin = self.communication.boot_donwload_finish(new_version, 
-                                                      sha=sha256_hash)
-        
+        fin = self.communication.boot_donwload_finish(
+            new_version, sha=sha256_hash)
         report["steps"].append({"action": "finish_download", "result": fin})
+        if fin.get("error"):
+            return {
+                "error": True,
+                "message": "Erro ao finalizar download",
+                "finish_result": fin
+            }
 
-        total_time = time.time() - start_init
+        monitor_step = {"action": "monitor_exit_bootloader", "reads": []}
+        report["steps"].append(monitor_step)
+
+        sleep(1)
+        post_finish_deadline = time.time() + (TIMEOUT_SEC * 2)
+        left_bootloader = False
+        running_version = None
+        last_err = None
+
+        while time.time() < post_finish_deadline:
+            try:
+                st_pf = self.communication.boot_get_status()
+            except ValueError as e:
+                # Ignora erros de CRC durante a transição do bootloader → aplicação
+                last_err = {"error": True, "message": str(e)}
+                time.sleep(SLEEP_TIME)
+                continue
+
+            sleep(SLEEP_TIME)
+            monitor_step["reads"].append(st_pf)
+
+            if st_pf.get("error"):
+                last_err = st_pf
+                time.sleep(SLEEP_TIME)
+                continue
+
+            flags_pf = st_pf["data"]["flags"]
+            running_version = st_pf["data"].get("version_raw", None)
+
+            if "IN_BOOTLOADER" not in flags_pf:
+                left_bootloader = True
+                if running_version is not None:
+                    break
+
+            time.sleep(SLEEP_TIME)
+
+        total_time = time.time() - start_total
+        version_match = (running_version ==
+                         new_version) if running_version is not None else False
 
         summary = {
             "version": new_version,
@@ -483,8 +372,26 @@ class Operation:
             "successful_packets": successful_packets,
             "total_firmware_size": total_size,
             "total_time_seconds": total_time,
-            "success": "error_at" not in report
+            "left_bootloader_confirmed": left_bootloader,
+            "running_version": running_version,
+            "version_match": version_match,
+            "success": ("error_at" not in report) and left_bootloader and version_match
         }
+
+        if not summary["success"]:
+            fail_report = {
+                "error": True,
+                "message": "Falha na confirmação pós-update",
+                "left_bootloader": left_bootloader,
+                "running_version": running_version,
+                "expected_version": new_version,
+                "last_status_error": last_err,
+                "summary": summary,
+                "report": report
+            }
+            if progress_cb:
+                progress_cb(fail_report)
+            return fail_report
 
         if progress_cb:
             progress_cb(report)
@@ -506,7 +413,7 @@ class Operation:
                 "error": result["error"],
                 "status": "fail",
                 "log_error": result["message"],
-                "connection_status": "desconectado" 
+                "connection_status": "desconectado"
             }
 
         return {
@@ -515,7 +422,7 @@ class Operation:
             "data": result["data"],
             "connection_status": "conectado"
         }
-        
+
     def get_hardware_temperature(self):
         """
         Obtem a temperatura do hardware.
@@ -824,4 +731,122 @@ class Operation:
             "status": "ok",
             "message": resp["message"],
             "data":    resp["data"]
+        }
+
+    def set_log_page(self, page: int) -> dict:
+        """
+        Define a página de logs a ser consultada no dispositivo.
+        Chama Protocol.set_log_page().
+        """
+        try:
+            # Chama o método da camada de comunicação
+            result = self.communication.set_log_page(page)
+            if result.get("error"):
+                return {"error": True, "status": "fail", "log_error": result["message"]}
+
+            return {
+                "error": False,
+                "status": "ok",
+                "message": result["message"],
+                "data": result["data"]
+            }
+        except Exception as e:
+            return {"error": True, "status": "fail", "log_error": str(e)}
+
+    def get_log_summary(self) -> dict:
+        """
+        Lê apenas o sumário da página de logs previamente selecionada.
+        Chama Protocol.get_log_summary().
+        """
+        try:
+            # Chama o método da camada de comunicação
+            result = self.communication.get_log_summary()
+            if result.get("error"):
+                return {"error": True, "status": "fail", "log_error": result["message"]}
+
+            return {
+                "error": False,
+                "status": "ok",
+                "message": result["message"],
+                "data": result["data"]
+            }
+        except Exception as e:
+            return {"error": True, "status": "fail", "log_error": str(e)}
+
+    def get_log_page_content(self) -> dict:
+        """
+        Lê o conteúdo completo da página de logs previamente selecionada.
+        Chama Protocol.get_log_page_content().
+        """
+        try:
+            # Chama o método da camada de comunicação
+            result = self.communication.get_log_page()
+            # result = self.communication.get_log_page_content()
+            if result.get("error"):
+                return {"error": True, "status": "fail", "log_error": result["message"]}
+
+            return {
+                "error": False,
+                "status": "ok",
+                "message": result["message"],
+                "data": result["data"]
+            }
+        except Exception as e:
+            return {"error": True, "status": "fail", "log_error": str(e), "data": None}
+
+    def get_ack(self) -> dict:
+        """
+        Lê o ACK do dispositivo.
+        Chama Protocol.get_ack_phase().
+        """
+        try:
+            result = self.communication.get_ack_phase()
+        except Exception as e:
+            return {
+                "error": True,
+                "status": "fail",
+                "log_error": f"Exception occurred: {str(e)}"
+            }
+
+        if result.get("error"):
+            return {
+                "error":  result["error"],
+                "status": "fail",
+                "log_error": result["message"]
+            }
+
+        return {
+            "error":  False,
+            "status": "ok",
+            "message": result["message"],
+            "data":    result["data"]
+        }
+
+    # TODO: IMPLEMENTAR METODO PARA LEITURA DO REGISTRO DE IMAGEM
+
+    def get_image_status_content(self) -> dict:
+        """
+        Lê o conteúdo do registro de status de imagem.
+        """
+        try:
+            result = self.communication.get_image_status()
+        except Exception as e:
+            return {
+                "error": True,
+                "status": "fail",
+                "log_error": f"Exception occurred: {str(e)}"
+            }
+
+        if result.get("error"):
+            return {
+                "error":  result["error"],
+                "status": "fail",
+                "log_error": result["message"]
+            }
+
+        return {
+            "error":  False,
+            "status": "ok",
+            "message": result["message"],
+            "data":    result["data"]
         }

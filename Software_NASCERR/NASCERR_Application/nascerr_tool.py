@@ -96,8 +96,8 @@ def send_command(op: Operation, args: argparse.Namespace) -> None:
         id=args.cmd_id,
         block=args.block,
         qtd_block=args.qtd,
-        ecc=NASCERR_MODE.MRSC,
-        write_type=W_DataTypeDef.WRITE_xAAh,
+        ecc=NASCERR_MODE[args.encoder],
+        write_type=W_DataTypeDef.WRITE_IMAGE,
         scheduler_time=args.scheduler,
         repeat=args.repeat,
         delay=args.delay,
@@ -109,7 +109,7 @@ def send_command(op: Operation, args: argparse.Namespace) -> None:
 def send_predefined_commands(op: Operation, qtd: int) -> None:
     qtd = min(max(1, qtd), MAX_PRESET)
     print(f"########## ENVIO DE {qtd} COMANDOS ##########")
-    for blk in range(1, qtd + 1):
+    for blk in range(0, qtd):
         result = op.send_commandNew(
             cmd_type=CmdTypeDef.WRITE_CMD,
             id=blk,
@@ -131,13 +131,13 @@ def read_experiment_by_id(op: Operation, args: argparse.Namespace) -> None:
         print(json.dumps({"error": True, "status": "fail",
               "log_error": f"page deve estar entre 0 e {MAX_PAGE}"}, indent=4))
         return
-
+    # print(args.encoder)
     result = op.send_commandNew(
         cmd_type=CmdTypeDef.READ_CMD,
         id=0,
         block=args.page,
         qtd_block=args.qtd_block,
-        ecc=NASCERR_MODE.MRSC,
+        ecc = NASCERR_MODE.MRSC,
         write_type=0,
         scheduler_time=0,
         repeat=0,
@@ -171,7 +171,37 @@ def clear_database(op: Operation, region_key: str):
     region = REGION_ALIAS[region_key]
     print(json.dumps(op.clear_database(region), indent=4))
 
+def set_log_page_handler(op: Operation, page: int):
+    """Handler para o novo comando 'logsetpage'."""
+    print(f">> Definindo a página de log ativa para: {page}")
+    result = op.set_log_page(page) #
+    print(json.dumps(result, indent=4))
 
+
+def show_log_summary_handler(op: Operation):
+    """Handler modificado para o comando 'logsum'."""
+    print(">> Lendo o sumário da página ativa...")
+    summary_result = op.get_log_summary() #
+    print(json.dumps(summary_result, indent=4))
+
+
+def show_log_page_content_handler(op: Operation):
+    """Handler modificado para o comando 'logread'."""
+    print(">> Lendo o conteúdo da página ativa...")
+    content_result = op.get_log_page_content() #
+    print(json.dumps(content_result, indent=4))
+
+def get_ack_data(op: Operation):
+    """Handler para ler dados de ACK"""
+    print(">> Lendo dados de ACK...")
+    content_result = op.get_ack()
+    print(json.dumps(content_result, indent=4))
+
+def get_img_status_data(op: Operation):
+    """Handler para ler dados de status de imagem"""
+    print(">> Lendo dados de status de imagem...")
+    content_result = op.get_image_status_content()
+    print(json.dumps(content_result, indent=4))
 # ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
@@ -184,6 +214,10 @@ def build_arg_parser() -> argparse.ArgumentParser:
 
     sub.add_parser("i2cscan", help="Escaneia dispositivos no barramento I²C")
     sub.add_parser("status", help="Mostra o status do dispositivo")
+    sub.add_parser("ack", help="Mostra os dados de ACK")
+
+    sub.add_parser("img-status", help="Mostra os dados de status de imagem")
+
     sub.add_parser(
         "boot-status", help="Mostra informações do bootloader e firmware")
     sub.add_parser(
@@ -199,6 +233,18 @@ def build_arg_parser() -> argparse.ArgumentParser:
     expsum.add_argument("--offset", type=int, default=None,
                         help="Offset opcional para setar antes da leitura")
 
+    log_set = sub.add_parser(
+        "logsetpage", help="Define a página de log ativa para os comandos 'logsum' e 'logread'.")
+    log_set.add_argument("--page", type=int, required=True, help="Número da página de log a ser definida (0-255)")
+
+    log_sum = sub.add_parser(
+        "logsum", help="Define uma página e lê apenas o seu sumário de metadados.")
+    # log_sum.add_argument("--page", type=int, required=True, help="Número da página de log a ser consultada (0-255)")
+
+    log_read = sub.add_parser(
+        "logread", help="Define uma página e lê o seu conteúdo completo (todos os logs).")
+    # log_read.add_argument("--page", type=int, required=True, help="Número da página de log a ser lida (0-255)")
+
     preset = sub.add_parser(
         "send-preset", help="Envia sequência de comandos predefinidos (1-67)")
     preset.add_argument("--qtd", type=int, default=64,
@@ -212,6 +258,8 @@ def build_arg_parser() -> argparse.ArgumentParser:
     snd.add_argument("--repeat", type=int, default=1)
     snd.add_argument("--delay", type=int, default=100_000)
     snd.add_argument("--write", action="store_true")
+    snd.add_argument("--encoder", type=str, default="BYPASS1",
+                     choices=[mode.name for mode in NASCERR_MODE])
 
     read_idx = sub.add_parser(
         "read-idx", help="Lê experimento(s) por página/qtd_blocos (READ_CMD)")
@@ -224,7 +272,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
 
     sp_clr = sub.add_parser(
         "clear-db", help="Apaga região da flash (exceto header)")
-    sp_clr.add_argument("--region", choices=list(REGION_ALIAS.keys()))
+    sp_clr.add_argument("--region", choices=list(REGION_ALIAS.keys()), required=True, help="Região da flash a ser apagada (ex: logs, scheduler, experiment, backup)")
 
     sub.add_parser("gps-data",  help="Grava 38 bytes 0xAA no registrador GPS")
 
@@ -287,6 +335,16 @@ def main() -> None:
         clear_database(op, args.region)
     elif args.cmd == "gps-data":
         print(json.dumps(op.gps_data(), indent=4))
+    elif args.cmd == "logsetpage":
+        set_log_page_handler(op, args.page)
+    elif args.cmd == "logsum":
+        show_log_summary_handler(op)
+    elif args.cmd == "logread":
+        show_log_page_content_handler(op)
+    elif args.cmd == "ack":
+        get_ack_data(op)
+    elif args.cmd == "img-status":
+        get_img_status_data(op)
     else:
         parser.print_help()
 

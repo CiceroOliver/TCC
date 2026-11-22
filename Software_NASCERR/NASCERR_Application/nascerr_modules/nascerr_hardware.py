@@ -86,7 +86,7 @@ class NASCERR_Power_Manager:
         """
         Cria o payload para colocar o sistema em modo de sleep.
         """
-        payload = struct.pack("<B", 0xAA)  # firmware valida 0xAA (nascerr_hw_check_sleep)
+        payload = struct.pack("<B", 0xAA)
         payload += struct.pack(">H", calculate_crc16(payload))
         self.status = "SLEEP"
 

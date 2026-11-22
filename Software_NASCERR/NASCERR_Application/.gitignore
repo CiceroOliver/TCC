@@ -135,7 +135,7 @@ celerybeat.pid
 .env
 .venv
 env/
-venv/
+.venv/
 ENV/
 env.bak/
 venv.bak/
@@ -179,3 +179,11 @@ logs/
 tests/log_test/
 
 nascerr_state.json
+
+/flight_soak_*/
+
+dados_salvos
+
+resultados
+
+test_results

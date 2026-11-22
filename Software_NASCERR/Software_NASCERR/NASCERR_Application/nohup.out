@@ -1,0 +1,166 @@
+[INFO|hw_manager|L50] 07/06/2026 15:09:37 +0100: Hardware acordado.
+[INFO|experiments|L860] 07/06/2026 15:09:37 +0100: [SYNC] Iniciando sincronização do estado inicial...
+[INFO|experiments|L871] 07/06/2026 15:09:37 +0100: [SYNC] ✓ Estado sincronizado | qtd_finished=0 | exp_flash_page=0 | last_qtd_total=0
+[INFO|handler|L85] 07/06/2026 15:09:37 +0100: Inicialização do roboc concluída.
+[INFO|cliente_grpc|L79] 07/06/2026 15:09:37 +0100: Iniciado (0.2s)
+[INFO|cliente_grpc|L92] 07/06/2026 15:09:37 +0100: Telemetry loop Iniciado
+[INFO|cliente_grpc|L146] 07/06/2026 15:09:37 +0100: Esperando telecomando...
+[INFO|cliente_grpc|L209] 07/06/2026 15:09:37 +0100: Coletor iniciado
+[INFO|cliente_grpc|L294] 07/06/2026 15:09:37 +0100: Monitor de Firmware iniciado
+[INFO|cliente_grpc|L157] 07/06/2026 15:10:53 +0100: CMD Recebido ID=1
+[INFO|handler|L114] 07/06/2026 15:10:53 +0100: [HW] Tentativa 1: Despachando CMD 1
+[INFO|handler|L121] 07/06/2026 15:10:54 +0100: [HW] CMD ExperimentCommand(id=1, block=0, qtd_block=64, ecc=4, write_type=4, scheduler_time=60000, repeat=5, delay=1200000) executado com sucesso na tentativa 1.
+[INFO|cliente_grpc|L184] 07/06/2026 15:10:54 +0100: CMD ACK ENVIADO ID=1
+[INFO|experiments|L650] 07/06/2026 15:32:08 +0100: [REQUEST_PAGE] NOT_READ encontrado | offset=0 entry id=1 → flash_page=0
+[INFO|experiments|L669] 07/06/2026 15:32:08 +0100: [REQUEST_PAGE] ✓ READ_CMD aceito | id_exp=1 flash_page=0 | resposta={'error': False, 'message': 'Data written successfully', 'command_bytes': '001d00000000010000000004000000000000000000000000000000bb36', 'crc16': 'BB36', 'command_dict': {'bytes_msg': 29, 'id': 1, 'cmd_type': 'READ_CMD', 'block': 0, 'qtd_block': 0, 'ecc': 'MRSC', 'write_type': 'WRITE_ZEROS', 'scheduler_time': 0, 'repeat': 0, 'delay': 0, 'current_tick': 0, 'crc16': 'BB36'}}
+[INFO|experiments|L378] 07/06/2026 15:32:08 +0100: [P5:REQUEST_PAGE] ✓ READ_CMD enviado para pág 0. Entrando em fase AGUARDANDO_HW_PRONTO.
+[INFO|experiments|L281] 07/06/2026 15:32:10 +0100: [P4:POLLING_HW] ✓ Hardware PRONTO (REQ_EXP_TX_RESULT). Iniciando leitura do buffer para pág 0...
+[INFO|experiments|L793] 07/06/2026 15:32:10 +0100: [READ_BUFFER] ✓ Pág 0 lida com sucesso | 1 resultado(s) | flash_page: 0 → 1
+[INFO|experiments|L288] 07/06/2026 15:32:10 +0100: [P4:POLLING_HW] ✓ Buffer lido — 1 resultado(s). Próxima pág=1. Aguardando confirmação do sumário...
+[INFO|cliente_grpc|L252] 07/06/2026 15:32:10 +0100: 1 resultado(s) enviados
+[INFO|experiments|L241] 07/06/2026 15:32:10 +0100: [P2:CONFIRM_SUMARIO] qtd_unread=0 — confirmação implícita para pág 0. Liberando.
+[INFO|experiments|L650] 07/06/2026 15:52:07 +0100: [REQUEST_PAGE] NOT_READ encontrado | offset=0 entry id=1 → flash_page=1
+[INFO|experiments|L669] 07/06/2026 15:52:07 +0100: [REQUEST_PAGE] ✓ READ_CMD aceito | id_exp=1 flash_page=1 | resposta={'error': False, 'message': 'Data written successfully', 'command_bytes': '001d00000000010001000004000000000000000000000000000000470b', 'crc16': '470B', 'command_dict': {'bytes_msg': 29, 'id': 1, 'cmd_type': 'READ_CMD', 'block': 1, 'qtd_block': 0, 'ecc': 'MRSC', 'write_type': 'WRITE_ZEROS', 'scheduler_time': 0, 'repeat': 0, 'delay': 0, 'current_tick': 0, 'crc16': '470B'}}
+[INFO|experiments|L378] 07/06/2026 15:52:07 +0100: [P5:REQUEST_PAGE] ✓ READ_CMD enviado para pág 1. Entrando em fase AGUARDANDO_HW_PRONTO.
+[INFO|experiments|L281] 07/06/2026 15:52:09 +0100: [P4:POLLING_HW] ✓ Hardware PRONTO (REQ_EXP_TX_RESULT). Iniciando leitura do buffer para pág 1...
+[INFO|experiments|L793] 07/06/2026 15:52:09 +0100: [READ_BUFFER] ✓ Pág 1 lida com sucesso | 1 resultado(s) | flash_page: 1 → 2
+[INFO|experiments|L288] 07/06/2026 15:52:09 +0100: [P4:POLLING_HW] ✓ Buffer lido — 1 resultado(s). Próxima pág=2. Aguardando confirmação do sumário...
+[INFO|cliente_grpc|L252] 07/06/2026 15:52:09 +0100: 1 resultado(s) enviados
+[INFO|experiments|L241] 07/06/2026 15:52:09 +0100: [P2:CONFIRM_SUMARIO] qtd_unread=0 — confirmação implícita para pág 1. Liberando.
+[INFO|experiments|L650] 07/06/2026 16:12:08 +0100: [REQUEST_PAGE] NOT_READ encontrado | offset=0 entry id=1 → flash_page=2
+[INFO|experiments|L669] 07/06/2026 16:12:08 +0100: [REQUEST_PAGE] ✓ READ_CMD aceito | id_exp=1 flash_page=2 | resposta={'error': False, 'message': 'Data written successfully', 'command_bytes': '001d00000000010002000004000000000000000000000000000000034f', 'crc16': '034F', 'command_dict': {'bytes_msg': 29, 'id': 1, 'cmd_type': 'READ_CMD', 'block': 2, 'qtd_block': 0, 'ecc': 'MRSC', 'write_type': 'WRITE_ZEROS', 'scheduler_time': 0, 'repeat': 0, 'delay': 0, 'current_tick': 0, 'crc16': '034F'}}
+[INFO|experiments|L378] 07/06/2026 16:12:08 +0100: [P5:REQUEST_PAGE] ✓ READ_CMD enviado para pág 2. Entrando em fase AGUARDANDO_HW_PRONTO.
+[INFO|experiments|L281] 07/06/2026 16:12:10 +0100: [P4:POLLING_HW] ✓ Hardware PRONTO (REQ_EXP_TX_RESULT). Iniciando leitura do buffer para pág 2...
+[INFO|experiments|L793] 07/06/2026 16:12:10 +0100: [READ_BUFFER] ✓ Pág 2 lida com sucesso | 1 resultado(s) | flash_page: 2 → 3
+[INFO|experiments|L288] 07/06/2026 16:12:10 +0100: [P4:POLLING_HW] ✓ Buffer lido — 1 resultado(s). Próxima pág=3. Aguardando confirmação do sumário...
+[INFO|cliente_grpc|L252] 07/06/2026 16:12:10 +0100: 1 resultado(s) enviados
+[INFO|experiments|L241] 07/06/2026 16:12:10 +0100: [P2:CONFIRM_SUMARIO] qtd_unread=0 — confirmação implícita para pág 2. Liberando.
+[INFO|experiments|L650] 07/06/2026 16:32:08 +0100: [REQUEST_PAGE] NOT_READ encontrado | offset=0 entry id=1 → flash_page=3
+[INFO|experiments|L669] 07/06/2026 16:32:08 +0100: [REQUEST_PAGE] ✓ READ_CMD aceito | id_exp=1 flash_page=3 | resposta={'error': False, 'message': 'Data written successfully', 'command_bytes': '001d00000000010003000004000000000000000000000000000000ff72', 'crc16': 'FF72', 'command_dict': {'bytes_msg': 29, 'id': 1, 'cmd_type': 'READ_CMD', 'block': 3, 'qtd_block': 0, 'ecc': 'MRSC', 'write_type': 'WRITE_ZEROS', 'scheduler_time': 0, 'repeat': 0, 'delay': 0, 'current_tick': 0, 'crc16': 'FF72'}}
+[INFO|experiments|L378] 07/06/2026 16:32:08 +0100: [P5:REQUEST_PAGE] ✓ READ_CMD enviado para pág 3. Entrando em fase AGUARDANDO_HW_PRONTO.
+[INFO|experiments|L281] 07/06/2026 16:32:11 +0100: [P4:POLLING_HW] ✓ Hardware PRONTO (REQ_EXP_TX_RESULT). Iniciando leitura do buffer para pág 3...
+[INFO|experiments|L793] 07/06/2026 16:32:11 +0100: [READ_BUFFER] ✓ Pág 3 lida com sucesso | 1 resultado(s) | flash_page: 3 → 4
+[INFO|experiments|L288] 07/06/2026 16:32:11 +0100: [P4:POLLING_HW] ✓ Buffer lido — 1 resultado(s). Próxima pág=4. Aguardando confirmação do sumário...
+[INFO|cliente_grpc|L252] 07/06/2026 16:32:11 +0100: 1 resultado(s) enviados
+[INFO|experiments|L241] 07/06/2026 16:32:11 +0100: [P2:CONFIRM_SUMARIO] qtd_unread=0 — confirmação implícita para pág 3. Liberando.
+[INFO|experiments|L650] 07/06/2026 16:52:07 +0100: [REQUEST_PAGE] NOT_READ encontrado | offset=0 entry id=1 → flash_page=4
+[INFO|experiments|L669] 07/06/2026 16:52:07 +0100: [REQUEST_PAGE] ✓ READ_CMD aceito | id_exp=1 flash_page=4 | resposta={'error': False, 'message': 'Data written successfully', 'command_bytes': '001d000000000100040000040000000000000000000000000000008bc7', 'crc16': '8BC7', 'command_dict': {'bytes_msg': 29, 'id': 1, 'cmd_type': 'READ_CMD', 'block': 4, 'qtd_block': 0, 'ecc': 'MRSC', 'write_type': 'WRITE_ZEROS', 'scheduler_time': 0, 'repeat': 0, 'delay': 0, 'current_tick': 0, 'crc16': '8BC7'}}
+[INFO|experiments|L378] 07/06/2026 16:52:07 +0100: [P5:REQUEST_PAGE] ✓ READ_CMD enviado para pág 4. Entrando em fase AGUARDANDO_HW_PRONTO.
+[INFO|experiments|L281] 07/06/2026 16:52:09 +0100: [P4:POLLING_HW] ✓ Hardware PRONTO (REQ_EXP_TX_RESULT). Iniciando leitura do buffer para pág 4...
+[INFO|experiments|L793] 07/06/2026 16:52:09 +0100: [READ_BUFFER] ✓ Pág 4 lida com sucesso | 1 resultado(s) | flash_page: 4 → 5
+[INFO|experiments|L288] 07/06/2026 16:52:09 +0100: [P4:POLLING_HW] ✓ Buffer lido — 1 resultado(s). Próxima pág=5. Aguardando confirmação do sumário...
+[INFO|cliente_grpc|L252] 07/06/2026 16:52:09 +0100: 1 resultado(s) enviados
+[INFO|experiments|L241] 07/06/2026 16:52:09 +0100: [P2:CONFIRM_SUMARIO] qtd_unread=0 — confirmação implícita para pág 4. Liberando.
+[INFO|experiments|L650] 07/06/2026 17:12:09 +0100: [REQUEST_PAGE] NOT_READ encontrado | offset=0 entry id=1 → flash_page=5
+[INFO|experiments|L669] 07/06/2026 17:12:09 +0100: [REQUEST_PAGE] ✓ READ_CMD aceito | id_exp=1 flash_page=5 | resposta={'error': False, 'message': 'Data written successfully', 'command_bytes': '001d0000000001000500000400000000000000000000000000000077fa', 'crc16': '77FA', 'command_dict': {'bytes_msg': 29, 'id': 1, 'cmd_type': 'READ_CMD', 'block': 5, 'qtd_block': 0, 'ecc': 'MRSC', 'write_type': 'WRITE_ZEROS', 'scheduler_time': 0, 'repeat': 0, 'delay': 0, 'current_tick': 0, 'crc16': '77FA'}}
+[INFO|experiments|L378] 07/06/2026 17:12:09 +0100: [P5:REQUEST_PAGE] ✓ READ_CMD enviado para pág 5. Entrando em fase AGUARDANDO_HW_PRONTO.
+[INFO|experiments|L281] 07/06/2026 17:12:11 +0100: [P4:POLLING_HW] ✓ Hardware PRONTO (REQ_EXP_TX_RESULT). Iniciando leitura do buffer para pág 5...
+[INFO|experiments|L793] 07/06/2026 17:12:11 +0100: [READ_BUFFER] ✓ Pág 5 lida com sucesso | 1 resultado(s) | flash_page: 5 → 6
+[INFO|experiments|L288] 07/06/2026 17:12:11 +0100: [P4:POLLING_HW] ✓ Buffer lido — 1 resultado(s). Próxima pág=6. Aguardando confirmação do sumário...
+[INFO|cliente_grpc|L252] 07/06/2026 17:12:11 +0100: 1 resultado(s) enviados
+[INFO|experiments|L241] 07/06/2026 17:12:11 +0100: [P2:CONFIRM_SUMARIO] qtd_unread=0 — confirmação implícita para pág 5. Liberando.
+[INFO|cliente_grpc|L157] 07/06/2026 17:12:11 +0100: CMD Recebido ID=2
+[INFO|handler|L114] 07/06/2026 17:12:11 +0100: [HW] Tentativa 1: Despachando CMD 2
+[INFO|handler|L121] 07/06/2026 17:12:11 +0100: [HW] CMD ExperimentCommand(id=2, block=0, qtd_block=64, ecc=4, write_type=4, scheduler_time=60000, repeat=5, delay=1200000) executado com sucesso na tentativa 1.
+[INFO|cliente_grpc|L184] 07/06/2026 17:12:11 +0100: CMD ACK ENVIADO ID=2
+[INFO|experiments|L650] 07/06/2026 17:33:26 +0100: [REQUEST_PAGE] NOT_READ encontrado | offset=0 entry id=2 → flash_page=6
+[INFO|experiments|L669] 07/06/2026 17:33:26 +0100: [REQUEST_PAGE] ✓ READ_CMD aceito | id_exp=2 flash_page=6 | resposta={'error': False, 'message': 'Data written successfully', 'command_bytes': '001d00000000020006000004000000000000000000000000000000008d', 'crc16': '008D', 'command_dict': {'bytes_msg': 29, 'id': 2, 'cmd_type': 'READ_CMD', 'block': 6, 'qtd_block': 0, 'ecc': 'MRSC', 'write_type': 'WRITE_ZEROS', 'scheduler_time': 0, 'repeat': 0, 'delay': 0, 'current_tick': 0, 'crc16': '008D'}}
+[INFO|experiments|L378] 07/06/2026 17:33:26 +0100: [P5:REQUEST_PAGE] ✓ READ_CMD enviado para pág 6. Entrando em fase AGUARDANDO_HW_PRONTO.
+[INFO|experiments|L281] 07/06/2026 17:33:28 +0100: [P4:POLLING_HW] ✓ Hardware PRONTO (REQ_EXP_TX_RESULT). Iniciando leitura do buffer para pág 6...
+[INFO|experiments|L793] 07/06/2026 17:33:29 +0100: [READ_BUFFER] ✓ Pág 6 lida com sucesso | 1 resultado(s) | flash_page: 6 → 7
+[INFO|experiments|L288] 07/06/2026 17:33:29 +0100: [P4:POLLING_HW] ✓ Buffer lido — 1 resultado(s). Próxima pág=7. Aguardando confirmação do sumário...
+[INFO|cliente_grpc|L252] 07/06/2026 17:33:29 +0100: 1 resultado(s) enviados
+[INFO|experiments|L241] 07/06/2026 17:33:29 +0100: [P2:CONFIRM_SUMARIO] qtd_unread=0 — confirmação implícita para pág 6. Liberando.
+[INFO|experiments|L650] 07/06/2026 17:53:26 +0100: [REQUEST_PAGE] NOT_READ encontrado | offset=0 entry id=2 → flash_page=7
+[INFO|experiments|L669] 07/06/2026 17:53:26 +0100: [REQUEST_PAGE] ✓ READ_CMD aceito | id_exp=2 flash_page=7 | resposta={'error': False, 'message': 'Data written successfully', 'command_bytes': '001d00000000020007000004000000000000000000000000000000fcb0', 'crc16': 'FCB0', 'command_dict': {'bytes_msg': 29, 'id': 2, 'cmd_type': 'READ_CMD', 'block': 7, 'qtd_block': 0, 'ecc': 'MRSC', 'write_type': 'WRITE_ZEROS', 'scheduler_time': 0, 'repeat': 0, 'delay': 0, 'current_tick': 0, 'crc16': 'FCB0'}}
+[INFO|experiments|L378] 07/06/2026 17:53:26 +0100: [P5:REQUEST_PAGE] ✓ READ_CMD enviado para pág 7. Entrando em fase AGUARDANDO_HW_PRONTO.
+[INFO|experiments|L281] 07/06/2026 17:53:28 +0100: [P4:POLLING_HW] ✓ Hardware PRONTO (REQ_EXP_TX_RESULT). Iniciando leitura do buffer para pág 7...
+[INFO|experiments|L793] 07/06/2026 17:53:29 +0100: [READ_BUFFER] ✓ Pág 7 lida com sucesso | 1 resultado(s) | flash_page: 7 → 8
+[INFO|experiments|L288] 07/06/2026 17:53:29 +0100: [P4:POLLING_HW] ✓ Buffer lido — 1 resultado(s). Próxima pág=8. Aguardando confirmação do sumário...
+[INFO|cliente_grpc|L252] 07/06/2026 17:53:29 +0100: 1 resultado(s) enviados
+[INFO|experiments|L241] 07/06/2026 17:53:29 +0100: [P2:CONFIRM_SUMARIO] qtd_unread=0 — confirmação implícita para pág 7. Liberando.
+[INFO|experiments|L650] 07/06/2026 18:13:25 +0100: [REQUEST_PAGE] NOT_READ encontrado | offset=0 entry id=2 → flash_page=8
+[INFO|experiments|L669] 07/06/2026 18:13:25 +0100: [REQUEST_PAGE] ✓ READ_CMD aceito | id_exp=2 flash_page=8 | resposta={'error': False, 'message': 'Data written successfully', 'command_bytes': '001d00000000020008000004000000000000000000000000000000e9e7', 'crc16': 'E9E7', 'command_dict': {'bytes_msg': 29, 'id': 2, 'cmd_type': 'READ_CMD', 'block': 8, 'qtd_block': 0, 'ecc': 'MRSC', 'write_type': 'WRITE_ZEROS', 'scheduler_time': 0, 'repeat': 0, 'delay': 0, 'current_tick': 0, 'crc16': 'E9E7'}}
+[INFO|experiments|L378] 07/06/2026 18:13:25 +0100: [P5:REQUEST_PAGE] ✓ READ_CMD enviado para pág 8. Entrando em fase AGUARDANDO_HW_PRONTO.
+[INFO|experiments|L281] 07/06/2026 18:13:27 +0100: [P4:POLLING_HW] ✓ Hardware PRONTO (REQ_EXP_TX_RESULT). Iniciando leitura do buffer para pág 8...
+[INFO|experiments|L793] 07/06/2026 18:13:27 +0100: [READ_BUFFER] ✓ Pág 8 lida com sucesso | 1 resultado(s) | flash_page: 8 → 9
+[INFO|experiments|L288] 07/06/2026 18:13:27 +0100: [P4:POLLING_HW] ✓ Buffer lido — 1 resultado(s). Próxima pág=9. Aguardando confirmação do sumário...
+[INFO|cliente_grpc|L252] 07/06/2026 18:13:27 +0100: 1 resultado(s) enviados
+[INFO|experiments|L241] 07/06/2026 18:13:27 +0100: [P2:CONFIRM_SUMARIO] qtd_unread=0 — confirmação implícita para pág 8. Liberando.
+[INFO|experiments|L650] 07/06/2026 18:33:26 +0100: [REQUEST_PAGE] NOT_READ encontrado | offset=0 entry id=2 → flash_page=9
+[INFO|experiments|L669] 07/06/2026 18:33:26 +0100: [REQUEST_PAGE] ✓ READ_CMD aceito | id_exp=2 flash_page=9 | resposta={'error': False, 'message': 'Data written successfully', 'command_bytes': '001d0000000002000900000400000000000000000000000000000015da', 'crc16': '15DA', 'command_dict': {'bytes_msg': 29, 'id': 2, 'cmd_type': 'READ_CMD', 'block': 9, 'qtd_block': 0, 'ecc': 'MRSC', 'write_type': 'WRITE_ZEROS', 'scheduler_time': 0, 'repeat': 0, 'delay': 0, 'current_tick': 0, 'crc16': '15DA'}}
+[INFO|experiments|L378] 07/06/2026 18:33:26 +0100: [P5:REQUEST_PAGE] ✓ READ_CMD enviado para pág 9. Entrando em fase AGUARDANDO_HW_PRONTO.
+[INFO|experiments|L281] 07/06/2026 18:33:28 +0100: [P4:POLLING_HW] ✓ Hardware PRONTO (REQ_EXP_TX_RESULT). Iniciando leitura do buffer para pág 9...
+[INFO|experiments|L793] 07/06/2026 18:33:28 +0100: [READ_BUFFER] ✓ Pág 9 lida com sucesso | 1 resultado(s) | flash_page: 9 → 10
+[INFO|experiments|L288] 07/06/2026 18:33:28 +0100: [P4:POLLING_HW] ✓ Buffer lido — 1 resultado(s). Próxima pág=10. Aguardando confirmação do sumário...
+[INFO|cliente_grpc|L252] 07/06/2026 18:33:28 +0100: 1 resultado(s) enviados
+[INFO|experiments|L241] 07/06/2026 18:33:28 +0100: [P2:CONFIRM_SUMARIO] qtd_unread=0 — confirmação implícita para pág 9. Liberando.
+[INFO|experiments|L650] 07/06/2026 18:53:26 +0100: [REQUEST_PAGE] NOT_READ encontrado | offset=0 entry id=2 → flash_page=10
+[INFO|experiments|L669] 07/06/2026 18:53:26 +0100: [REQUEST_PAGE] ✓ READ_CMD aceito | id_exp=2 flash_page=10 | resposta={'error': False, 'message': 'Data written successfully', 'command_bytes': '001d0000000002000a000004000000000000000000000000000000519e', 'crc16': '519E', 'command_dict': {'bytes_msg': 29, 'id': 2, 'cmd_type': 'READ_CMD', 'block': 10, 'qtd_block': 0, 'ecc': 'MRSC', 'write_type': 'WRITE_ZEROS', 'scheduler_time': 0, 'repeat': 0, 'delay': 0, 'current_tick': 0, 'crc16': '519E'}}
+[INFO|experiments|L378] 07/06/2026 18:53:26 +0100: [P5:REQUEST_PAGE] ✓ READ_CMD enviado para pág 10. Entrando em fase AGUARDANDO_HW_PRONTO.
+[INFO|experiments|L281] 07/06/2026 18:53:28 +0100: [P4:POLLING_HW] ✓ Hardware PRONTO (REQ_EXP_TX_RESULT). Iniciando leitura do buffer para pág 10...
+[INFO|experiments|L793] 07/06/2026 18:53:28 +0100: [READ_BUFFER] ✓ Pág 10 lida com sucesso | 1 resultado(s) | flash_page: 10 → 11
+[INFO|experiments|L288] 07/06/2026 18:53:28 +0100: [P4:POLLING_HW] ✓ Buffer lido — 1 resultado(s). Próxima pág=11. Aguardando confirmação do sumário...
+[INFO|cliente_grpc|L252] 07/06/2026 18:53:28 +0100: 1 resultado(s) enviados
+[INFO|experiments|L241] 07/06/2026 18:53:28 +0100: [P2:CONFIRM_SUMARIO] qtd_unread=0 — confirmação implícita para pág 10. Liberando.
+[INFO|experiments|L650] 07/06/2026 19:13:25 +0100: [REQUEST_PAGE] NOT_READ encontrado | offset=0 entry id=2 → flash_page=11
+[INFO|experiments|L669] 07/06/2026 19:13:25 +0100: [REQUEST_PAGE] ✓ READ_CMD aceito | id_exp=2 flash_page=11 | resposta={'error': False, 'message': 'Data written successfully', 'command_bytes': '001d0000000002000b000004000000000000000000000000000000ada3', 'crc16': 'ADA3', 'command_dict': {'bytes_msg': 29, 'id': 2, 'cmd_type': 'READ_CMD', 'block': 11, 'qtd_block': 0, 'ecc': 'MRSC', 'write_type': 'WRITE_ZEROS', 'scheduler_time': 0, 'repeat': 0, 'delay': 0, 'current_tick': 0, 'crc16': 'ADA3'}}
+[INFO|experiments|L378] 07/06/2026 19:13:25 +0100: [P5:REQUEST_PAGE] ✓ READ_CMD enviado para pág 11. Entrando em fase AGUARDANDO_HW_PRONTO.
+[INFO|experiments|L281] 07/06/2026 19:13:27 +0100: [P4:POLLING_HW] ✓ Hardware PRONTO (REQ_EXP_TX_RESULT). Iniciando leitura do buffer para pág 11...
+[INFO|experiments|L793] 07/06/2026 19:13:27 +0100: [READ_BUFFER] ✓ Pág 11 lida com sucesso | 1 resultado(s) | flash_page: 11 → 12
+[INFO|experiments|L288] 07/06/2026 19:13:27 +0100: [P4:POLLING_HW] ✓ Buffer lido — 1 resultado(s). Próxima pág=12. Aguardando confirmação do sumário...
+[INFO|cliente_grpc|L252] 07/06/2026 19:13:27 +0100: 1 resultado(s) enviados
+[INFO|cliente_grpc|L157] 07/06/2026 19:13:27 +0100: CMD Recebido ID=3
+[INFO|handler|L114] 07/06/2026 19:13:27 +0100: [HW] Tentativa 1: Despachando CMD 3
+[INFO|experiments|L241] 07/06/2026 19:13:27 +0100: [P2:CONFIRM_SUMARIO] qtd_unread=0 — confirmação implícita para pág 11. Liberando.
+[INFO|handler|L121] 07/06/2026 19:13:28 +0100: [HW] CMD ExperimentCommand(id=3, block=0, qtd_block=64, ecc=4, write_type=4, scheduler_time=60000, repeat=5, delay=1200000) executado com sucesso na tentativa 1.
+[INFO|cliente_grpc|L184] 07/06/2026 19:13:28 +0100: CMD ACK ENVIADO ID=3
+[INFO|experiments|L650] 07/06/2026 19:34:42 +0100: [REQUEST_PAGE] NOT_READ encontrado | offset=0 entry id=3 → flash_page=12
+[INFO|experiments|L669] 07/06/2026 19:34:42 +0100: [REQUEST_PAGE] ✓ READ_CMD aceito | id_exp=3 flash_page=12 | resposta={'error': False, 'message': 'Data written successfully', 'command_bytes': '001d0000000003000c0000040000000000000000000000000000000806', 'crc16': '0806', 'command_dict': {'bytes_msg': 29, 'id': 3, 'cmd_type': 'READ_CMD', 'block': 12, 'qtd_block': 0, 'ecc': 'MRSC', 'write_type': 'WRITE_ZEROS', 'scheduler_time': 0, 'repeat': 0, 'delay': 0, 'current_tick': 0, 'crc16': '0806'}}
+[INFO|experiments|L378] 07/06/2026 19:34:42 +0100: [P5:REQUEST_PAGE] ✓ READ_CMD enviado para pág 12. Entrando em fase AGUARDANDO_HW_PRONTO.
+[INFO|experiments|L281] 07/06/2026 19:34:44 +0100: [P4:POLLING_HW] ✓ Hardware PRONTO (REQ_EXP_TX_RESULT). Iniciando leitura do buffer para pág 12...
+[INFO|experiments|L793] 07/06/2026 19:34:44 +0100: [READ_BUFFER] ✓ Pág 12 lida com sucesso | 1 resultado(s) | flash_page: 12 → 13
+[INFO|experiments|L288] 07/06/2026 19:34:44 +0100: [P4:POLLING_HW] ✓ Buffer lido — 1 resultado(s). Próxima pág=13. Aguardando confirmação do sumário...
+[INFO|cliente_grpc|L252] 07/06/2026 19:34:45 +0100: 1 resultado(s) enviados
+[INFO|experiments|L241] 07/06/2026 19:34:45 +0100: [P2:CONFIRM_SUMARIO] qtd_unread=0 — confirmação implícita para pág 12. Liberando.
+[INFO|experiments|L650] 07/06/2026 19:54:41 +0100: [REQUEST_PAGE] NOT_READ encontrado | offset=0 entry id=3 → flash_page=13
+[INFO|experiments|L669] 07/06/2026 19:54:41 +0100: [REQUEST_PAGE] ✓ READ_CMD aceito | id_exp=3 flash_page=13 | resposta={'error': False, 'message': 'Data written successfully', 'command_bytes': '001d0000000003000d000004000000000000000000000000000000f43b', 'crc16': 'F43B', 'command_dict': {'bytes_msg': 29, 'id': 3, 'cmd_type': 'READ_CMD', 'block': 13, 'qtd_block': 0, 'ecc': 'MRSC', 'write_type': 'WRITE_ZEROS', 'scheduler_time': 0, 'repeat': 0, 'delay': 0, 'current_tick': 0, 'crc16': 'F43B'}}
+[INFO|experiments|L378] 07/06/2026 19:54:41 +0100: [P5:REQUEST_PAGE] ✓ READ_CMD enviado para pág 13. Entrando em fase AGUARDANDO_HW_PRONTO.
+[INFO|experiments|L281] 07/06/2026 19:54:43 +0100: [P4:POLLING_HW] ✓ Hardware PRONTO (REQ_EXP_TX_RESULT). Iniciando leitura do buffer para pág 13...
+[INFO|experiments|L793] 07/06/2026 19:54:43 +0100: [READ_BUFFER] ✓ Pág 13 lida com sucesso | 1 resultado(s) | flash_page: 13 → 14
+[INFO|experiments|L288] 07/06/2026 19:54:43 +0100: [P4:POLLING_HW] ✓ Buffer lido — 1 resultado(s). Próxima pág=14. Aguardando confirmação do sumário...
+[INFO|cliente_grpc|L252] 07/06/2026 19:54:43 +0100: 1 resultado(s) enviados
+[INFO|experiments|L241] 07/06/2026 19:54:43 +0100: [P2:CONFIRM_SUMARIO] qtd_unread=0 — confirmação implícita para pág 13. Liberando.
+[INFO|experiments|L650] 07/06/2026 20:14:42 +0100: [REQUEST_PAGE] NOT_READ encontrado | offset=0 entry id=3 → flash_page=14
+[INFO|experiments|L669] 07/06/2026 20:14:42 +0100: [REQUEST_PAGE] ✓ READ_CMD aceito | id_exp=3 flash_page=14 | resposta={'error': False, 'message': 'Data written successfully', 'command_bytes': '001d0000000003000e000004000000000000000000000000000000b07f', 'crc16': 'B07F', 'command_dict': {'bytes_msg': 29, 'id': 3, 'cmd_type': 'READ_CMD', 'block': 14, 'qtd_block': 0, 'ecc': 'MRSC', 'write_type': 'WRITE_ZEROS', 'scheduler_time': 0, 'repeat': 0, 'delay': 0, 'current_tick': 0, 'crc16': 'B07F'}}
+[INFO|experiments|L378] 07/06/2026 20:14:42 +0100: [P5:REQUEST_PAGE] ✓ READ_CMD enviado para pág 14. Entrando em fase AGUARDANDO_HW_PRONTO.
+[INFO|experiments|L281] 07/06/2026 20:14:44 +0100: [P4:POLLING_HW] ✓ Hardware PRONTO (REQ_EXP_TX_RESULT). Iniciando leitura do buffer para pág 14...
+[INFO|experiments|L793] 07/06/2026 20:14:44 +0100: [READ_BUFFER] ✓ Pág 14 lida com sucesso | 1 resultado(s) | flash_page: 14 → 15
+[INFO|experiments|L288] 07/06/2026 20:14:44 +0100: [P4:POLLING_HW] ✓ Buffer lido — 1 resultado(s). Próxima pág=15. Aguardando confirmação do sumário...
+[INFO|cliente_grpc|L252] 07/06/2026 20:14:44 +0100: 1 resultado(s) enviados
+[INFO|experiments|L241] 07/06/2026 20:14:44 +0100: [P2:CONFIRM_SUMARIO] qtd_unread=0 — confirmação implícita para pág 14. Liberando.
+[INFO|experiments|L650] 07/06/2026 20:34:41 +0100: [REQUEST_PAGE] NOT_READ encontrado | offset=0 entry id=3 → flash_page=15
+[INFO|experiments|L669] 07/06/2026 20:34:41 +0100: [REQUEST_PAGE] ✓ READ_CMD aceito | id_exp=3 flash_page=15 | resposta={'error': False, 'message': 'Data written successfully', 'command_bytes': '001d0000000003000f0000040000000000000000000000000000004c42', 'crc16': '4C42', 'command_dict': {'bytes_msg': 29, 'id': 3, 'cmd_type': 'READ_CMD', 'block': 15, 'qtd_block': 0, 'ecc': 'MRSC', 'write_type': 'WRITE_ZEROS', 'scheduler_time': 0, 'repeat': 0, 'delay': 0, 'current_tick': 0, 'crc16': '4C42'}}
+[INFO|experiments|L378] 07/06/2026 20:34:41 +0100: [P5:REQUEST_PAGE] ✓ READ_CMD enviado para pág 15. Entrando em fase AGUARDANDO_HW_PRONTO.
+[INFO|experiments|L281] 07/06/2026 20:34:43 +0100: [P4:POLLING_HW] ✓ Hardware PRONTO (REQ_EXP_TX_RESULT). Iniciando leitura do buffer para pág 15...
+[INFO|experiments|L793] 07/06/2026 20:34:43 +0100: [READ_BUFFER] ✓ Pág 15 lida com sucesso | 1 resultado(s) | flash_page: 15 → 16
+[INFO|experiments|L288] 07/06/2026 20:34:43 +0100: [P4:POLLING_HW] ✓ Buffer lido — 1 resultado(s). Próxima pág=16. Aguardando confirmação do sumário...
+[INFO|cliente_grpc|L252] 07/06/2026 20:34:43 +0100: 1 resultado(s) enviados
+[INFO|experiments|L241] 07/06/2026 20:34:43 +0100: [P2:CONFIRM_SUMARIO] qtd_unread=0 — confirmação implícita para pág 15. Liberando.
+[INFO|experiments|L650] 07/06/2026 20:54:42 +0100: [REQUEST_PAGE] NOT_READ encontrado | offset=0 entry id=3 → flash_page=16
+[INFO|experiments|L669] 07/06/2026 20:54:42 +0100: [REQUEST_PAGE] ✓ READ_CMD aceito | id_exp=3 flash_page=16 | resposta={'error': False, 'message': 'Data written successfully', 'command_bytes': '001d000000000300100000040000000000000000000000000000009ad1', 'crc16': '9AD1', 'command_dict': {'bytes_msg': 29, 'id': 3, 'cmd_type': 'READ_CMD', 'block': 16, 'qtd_block': 0, 'ecc': 'MRSC', 'write_type': 'WRITE_ZEROS', 'scheduler_time': 0, 'repeat': 0, 'delay': 0, 'current_tick': 0, 'crc16': '9AD1'}}
+[INFO|experiments|L378] 07/06/2026 20:54:42 +0100: [P5:REQUEST_PAGE] ✓ READ_CMD enviado para pág 16. Entrando em fase AGUARDANDO_HW_PRONTO.
+[INFO|experiments|L281] 07/06/2026 20:54:44 +0100: [P4:POLLING_HW] ✓ Hardware PRONTO (REQ_EXP_TX_RESULT). Iniciando leitura do buffer para pág 16...
+[INFO|experiments|L793] 07/06/2026 20:54:45 +0100: [READ_BUFFER] ✓ Pág 16 lida com sucesso | 1 resultado(s) | flash_page: 16 → 17
+[INFO|experiments|L288] 07/06/2026 20:54:45 +0100: [P4:POLLING_HW] ✓ Buffer lido — 1 resultado(s). Próxima pág=17. Aguardando confirmação do sumário...
+[INFO|cliente_grpc|L252] 07/06/2026 20:54:45 +0100: 1 resultado(s) enviados
+[INFO|experiments|L241] 07/06/2026 20:54:45 +0100: [P2:CONFIRM_SUMARIO] qtd_unread=0 — confirmação implícita para pág 16. Liberando.
+[INFO|experiments|L650] 07/06/2026 21:14:42 +0100: [REQUEST_PAGE] NOT_READ encontrado | offset=0 entry id=3 → flash_page=17
+[INFO|experiments|L669] 07/06/2026 21:14:42 +0100: [REQUEST_PAGE] ✓ READ_CMD aceito | id_exp=3 flash_page=17 | resposta={'error': False, 'message': 'Data written successfully', 'command_bytes': '001d0000000003001100000400000000000000000000000000000066ec', 'crc16': '66EC', 'command_dict': {'bytes_msg': 29, 'id': 3, 'cmd_type': 'READ_CMD', 'block': 17, 'qtd_block': 0, 'ecc': 'MRSC', 'write_type': 'WRITE_ZEROS', 'scheduler_time': 0, 'repeat': 0, 'delay': 0, 'current_tick': 0, 'crc16': '66EC'}}
+[INFO|experiments|L378] 07/06/2026 21:14:42 +0100: [P5:REQUEST_PAGE] ✓ READ_CMD enviado para pág 17. Entrando em fase AGUARDANDO_HW_PRONTO.
+[INFO|experiments|L281] 07/06/2026 21:14:44 +0100: [P4:POLLING_HW] ✓ Hardware PRONTO (REQ_EXP_TX_RESULT). Iniciando leitura do buffer para pág 17...
+[INFO|experiments|L793] 07/06/2026 21:14:44 +0100: [READ_BUFFER] ✓ Pág 17 lida com sucesso | 1 resultado(s) | flash_page: 17 → 18
+[INFO|experiments|L288] 07/06/2026 21:14:44 +0100: [P4:POLLING_HW] ✓ Buffer lido — 1 resultado(s). Próxima pág=18. Aguardando confirmação do sumário...
+[INFO|cliente_grpc|L252] 07/06/2026 21:14:44 +0100: 1 resultado(s) enviados
+[INFO|experiments|L241] 07/06/2026 21:14:44 +0100: [P2:CONFIRM_SUMARIO] qtd_unread=0 — confirmação implícita para pág 17. Liberando.
+[WARNING|cliente_grpc|L201] 07/06/2026 21:49:47 +0100: PollCommands perdido: StatusCode.UNAVAILABLE

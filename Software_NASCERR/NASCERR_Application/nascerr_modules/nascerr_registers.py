@@ -8,25 +8,23 @@ class AccessType(Enum):
     READ_ONLY = "read only"
     FULL_ACCESS = "full access"
 
+# TODO: ADICIONAR NOVO REGISTRO DE IMAGEM
+
 
 # Register addresses, sizes, and descriptions
 register_info = {
     "NONE":         {'addr': 0x00, 'size': 0,  'access': AccessType.FULL_ACCESS, 'description': 'No register selected'},
     # 2 bytes for data and 2 bytes for crc
-    "STAT":         {'addr': 0x01, 'size': 11,  'access': AccessType.READ_ONLY,   'description': 'Operation status register'},
+    "STAT":         {'addr': 0x01, 'size': 7,  'access': AccessType.READ_ONLY,   'description': 'Operation status register'},
     # 2 bytes for data and 2 bytes for crc
     "IDX":          {'addr': 0x02, 'size': 4,  'access': AccessType.READ_ONLY,   'description': 'Number of the data block to transmit'},
     "TXB":          {'addr': 0x03, 'size': 2066, 'access': AccessType.READ_ONLY, 'description': 'Transmission buffer register'},
     "CMD":          {'addr': 0x04, 'size': 512, 'access': AccessType.WRITE_ONLY, 'description': 'Command buffer register'},
-    "MODE":         {'addr': 0x05, 'size': 1,  'access': AccessType.READ_ONLY,   'description': 'Operation mode register'},
+    "ACK":          {'addr': 0x05, 'size': 3,  'access': AccessType.READ_ONLY,  'description': 'ACK register'},
     "SLEEP":        {'addr': 0x06, 'size': 3,  'access': AccessType.WRITE_ONLY,  'description': 'SLEEP mode register'},
     "WAKEUP":       {'addr': 0x07, 'size': 3,  'access': AccessType.WRITE_ONLY,  'description': 'WAKEUP mode register'},
     "GPS":          {'addr': 0x08, 'size': 36, 'access': AccessType.WRITE_ONLY,  'description': 'GPS data register'},
-    # "TIME":         {'addr': 0x09, 'size': 6,  'access': AccessType.WRITE_ONLY,  'description': 'TIMESTAMP data register'},
-    # "TEMP":         {'addr': 0x0A, 'size': 2,  'access': AccessType.WRITE_ONLY,  'description': 'TEMPERATURE data register'},
-    # "ERROR_OP":     {'addr': 0x0C, 'size': 2,  'access': AccessType.READ_ONLY,   'description': 'Operation Error Log'},
-    # "ERROR_EPS":    {'addr': 0x0D, 'size': 2,  'access': AccessType.READ_ONLY,   'description': 'Power Supply Error Log'},
-    "ACK":          {'addr': 0x0D, 'size': 4,  'access': AccessType.WRITE_ONLY,  'description': 'ACK register'},
+    "MODE":         {'addr': 0x0D, 'size': 1,  'access': AccessType.READ_ONLY,   'description': 'Operation mode register'},
     "HW_STAT":      {'addr': 0x0E, 'size': 3,  'access': AccessType.WRITE_ONLY,  'description': 'Hardware status register'},
     "HW_TXB":       {'addr': 0x0F, 'size': 22, 'access': AccessType.READ_ONLY,   'description': 'Hardware transmission buffer register'},
     "BOOT_DATA":    {'addr': 0x10, 'size': 263, 'access': AccessType.WRITE_ONLY, 'description': 'RXB register'},
@@ -36,6 +34,10 @@ register_info = {
     "EXP_SUM_IDX":  {'addr': 0x14, 'size': 3,  'access': AccessType.WRITE_ONLY,  'description': 'Page/offset selector for unread-summary page'},
     "EXP_SUM_DATA": {'addr': 0x15, 'size': 216, 'access': AccessType.READ_ONLY,   'description': 'Unread experiments summary page'},
     "DB_CLEAR":     {'addr': 0x16, 'size': 3,  'access': AccessType.WRITE_ONLY,  'description': 'Database-erase command register'},
+    "LOG_SUM":       {'addr': 0x17, 'size': 16,  'access': AccessType.READ_ONLY,  'description': 'Log summary memory register'},
+    "LOG_SET_PAGE":  {'addr': 0x18, 'size': 3,  'access': AccessType.WRITE_ONLY,  'description': 'Select the Log page to read'},
+    "LOG_READ_PAGE": {'addr': 0x19, 'size': 2109, 'access': AccessType.READ_ONLY,   'description': 'Log page read buffer'},
+    "IMAGE_STAT":    {'addr': 0x1B, 'size': 10,  'access': AccessType.READ_ONLY,   'description': 'Image status register'}
 }
 
 
