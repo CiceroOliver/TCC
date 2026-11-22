@@ -1,0 +1,9 @@
+../Core/Src/spi.c:36:6:MX_SPI3_Init	2
+../Core/Src/spi.c:70:6:HAL_SPI_MspInit	4
+../Core/Src/spi.c:148:6:HAL_SPI_MspDeInit	2
+../Core/Src/spi.c:181:6:HAL_SPI_TxRxCpltCallback	2
+../Core/Src/spi.c:189:6:HAL_SPI_TxCpltCallback	2
+../Core/Src/spi.c:197:6:HAL_SPI_RxCpltCallback	2
+../Core/Src/spi.c:216:15:SPI_TransmitReceive	2
+../Core/Src/spi.c:228:15:SPI2_Receive	3
+../Core/Src/spi.c:246:15:SPI2_Transmit	3

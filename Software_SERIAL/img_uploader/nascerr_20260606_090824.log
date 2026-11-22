@@ -1,0 +1,276 @@
+
+# ============================================================
+# NASCERR session  2026-06-06T09:08:24
+# Port: COM7  Baud: 2000000
+# ============================================================
+2026-06-06 09:08:26.430 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.38 C | fail=0x05
+2026-06-06 09:08:26.432 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.99 | 2V5=20.80 | 2V5vpp=4.43 | 3V3=30.74 | 3V3fpga=10.44
+2026-06-06 09:08:26.433 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.78 | 2V5=42.76 | 2V5vpp=11.07 | 3V3=101.43 | 3V3fpga=34.44 | Total=272.48
+2026-06-06 09:08:28.432 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.36 C | fail=0x05
+2026-06-06 09:08:28.435 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.82 | 2V5=20.94 | 2V5vpp=4.48 | 3V3=30.19 | 3V3fpga=11.81
+2026-06-06 09:08:28.437 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.59 | 2V5=42.74 | 2V5vpp=11.19 | 3V3=99.62 | 3V3fpga=38.98 | Total=275.13
+2026-06-06 09:08:30.433 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.40 C | fail=0x05
+2026-06-06 09:08:30.436 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.89 | 2V5=20.62 | 2V5vpp=4.60 | 3V3=30.30 | 3V3fpga=10.61
+2026-06-06 09:08:30.438 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.67 | 2V5=42.77 | 2V5vpp=11.51 | 3V3=100.00 | 3V3fpga=35.01 | Total=271.95
+2026-06-06 09:08:32.430 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.40 C | fail=0x05
+2026-06-06 09:08:32.432 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.72 | 2V5=18.70 | 2V5vpp=4.39 | 3V3=30.60 | 3V3fpga=7.17
+2026-06-06 09:08:32.433 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.27 | 2V5=42.77 | 2V5vpp=10.99 | 3V3=100.99 | 3V3fpga=23.66 | Total=259.68
+2026-06-06 09:08:34.433 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.40 C | fail=0x05
+2026-06-06 09:08:34.437 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=66.93 | 2V5=19.04 | 2V5vpp=4.65 | 3V3=30.94 | 3V3fpga=8.45
+2026-06-06 09:08:34.438 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=80.32 | 2V5=42.77 | 2V5vpp=11.63 | 3V3=102.11 | 3V3fpga=27.89 | Total=264.73
+2026-06-06 09:08:36.430 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.36 C | fail=0x05
+2026-06-06 09:08:36.431 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.31 | 2V5=18.21 | 2V5vpp=4.65 | 3V3=30.66 | 3V3fpga=12.68
+2026-06-06 09:08:36.433 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.98 | 2V5=42.74 | 2V5vpp=11.62 | 3V3=101.17 | 3V3fpga=41.86 | Total=279.37
+2026-06-06 09:08:38.430 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.38 C | fail=0x05
+2026-06-06 09:08:38.431 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.00 | 2V5=19.21 | 2V5vpp=4.52 | 3V3=31.01 | 3V3fpga=10.83
+2026-06-06 09:08:38.433 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.60 | 2V5=42.76 | 2V5vpp=11.30 | 3V3=102.35 | 3V3fpga=35.74 | Total=273.75
+2026-06-06 09:08:40.430 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.40 C | fail=0x07
+2026-06-06 09:08:40.431 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.30 | 2V5=19.16 | 2V5vpp=4.63 | 3V3=31.50 | 3V3fpga=10.31
+2026-06-06 09:08:40.432 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.96 | 2V5=42.77 | 2V5vpp=11.57 | 3V3=103.94 | 3V3fpga=34.01 | Total=274.25
+2026-06-06 09:08:42.430 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.45 C | fail=0x05
+2026-06-06 09:08:42.431 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.88 | 2V5=19.99 | 2V5vpp=4.38 | 3V3=31.16 | 3V3fpga=11.50
+2026-06-06 09:08:42.433 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.66 | 2V5=42.81 | 2V5vpp=10.95 | 3V3=102.83 | 3V3fpga=37.94 | Total=277.18
+2026-06-06 09:08:44.431 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.45 C | fail=0x05
+2026-06-06 09:08:44.433 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=69.00 | 2V5=21.23 | 2V5vpp=4.21 | 3V3=30.63 | 3V3fpga=9.24
+2026-06-06 09:08:44.434 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.80 | 2V5=42.81 | 2V5vpp=10.53 | 3V3=101.09 | 3V3fpga=30.50 | Total=267.73
+2026-06-06 09:08:46.429 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.45 C | fail=0x07
+2026-06-06 09:08:46.430 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=66.93 | 2V5=21.74 | 2V5vpp=4.69 | 3V3=32.08 | 3V3fpga=12.52
+2026-06-06 09:08:46.432 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=80.31 | 2V5=42.81 | 2V5vpp=11.72 | 3V3=105.88 | 3V3fpga=41.31 | Total=282.02
+2026-06-06 09:08:48.429 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.45 C | fail=0x05
+2026-06-06 09:08:48.430 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.29 | 2V5=18.36 | 2V5vpp=4.48 | 3V3=30.84 | 3V3fpga=7.77
+2026-06-06 09:08:48.431 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=80.75 | 2V5=42.81 | 2V5vpp=11.20 | 3V3=101.77 | 3V3fpga=25.64 | Total=262.17
+2026-06-06 09:08:50.445 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.45 C | fail=0x07
+2026-06-06 09:08:50.446 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=66.89 | 2V5=20.61 | 2V5vpp=4.70 | 3V3=30.79 | 3V3fpga=13.52
+2026-06-06 09:08:50.447 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=80.27 | 2V5=42.81 | 2V5vpp=11.76 | 3V3=101.61 | 3V3fpga=44.61 | Total=281.06
+2026-06-06 09:08:52.445 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.45 C | fail=0x05
+2026-06-06 09:08:52.446 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.37 | 2V5=19.26 | 2V5vpp=4.67 | 3V3=31.45 | 3V3fpga=13.24
+2026-06-06 09:08:52.448 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.04 | 2V5=42.81 | 2V5vpp=11.66 | 3V3=103.78 | 3V3fpga=43.69 | Total=283.98
+2026-06-06 09:08:54.446 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.50 C | fail=0x05
+2026-06-06 09:08:54.449 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.23 | 2V5=20.30 | 2V5vpp=4.28 | 3V3=30.89 | 3V3fpga=8.73
+2026-06-06 09:08:54.451 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.88 | 2V5=42.84 | 2V5vpp=10.71 | 3V3=101.93 | 3V3fpga=28.82 | Total=266.18
+2026-06-06 09:08:56.445 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.50 C | fail=0x05
+2026-06-06 09:08:56.446 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.25 | 2V5=18.88 | 2V5vpp=4.54 | 3V3=30.83 | 3V3fpga=12.20
+2026-06-06 09:08:56.447 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.91 | 2V5=42.84 | 2V5vpp=11.35 | 3V3=101.74 | 3V3fpga=40.25 | Total=278.09
+2026-06-06 09:08:58.445 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.47 C | fail=0x07
+2026-06-06 09:08:58.446 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.92 | 2V5=21.53 | 2V5vpp=4.66 | 3V3=31.03 | 3V3fpga=9.99
+2026-06-06 09:08:58.447 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.71 | 2V5=42.82 | 2V5vpp=11.66 | 3V3=102.42 | 3V3fpga=32.97 | Total=272.57
+2026-06-06 09:09:00.446 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.50 C | fail=0x05
+2026-06-06 09:09:00.447 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.97 | 2V5=21.92 | 2V5vpp=4.33 | 3V3=31.92 | 3V3fpga=8.83
+2026-06-06 09:09:00.448 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.56 | 2V5=42.84 | 2V5vpp=10.83 | 3V3=105.35 | 3V3fpga=29.14 | Total=269.73
+2026-06-06 09:09:02.445 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.52 C | fail=0x05
+2026-06-06 09:09:02.446 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.28 | 2V5=19.07 | 2V5vpp=4.47 | 3V3=31.00 | 3V3fpga=8.67
+2026-06-06 09:09:02.447 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.93 | 2V5=42.86 | 2V5vpp=11.16 | 3V3=102.30 | 3V3fpga=28.61 | Total=266.86
+2026-06-06 09:09:04.445 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.52 C | fail=0x05
+2026-06-06 09:09:04.447 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=66.67 | 2V5=17.37 | 2V5vpp=4.33 | 3V3=30.20 | 3V3fpga=10.65
+2026-06-06 09:09:04.449 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=80.00 | 2V5=42.86 | 2V5vpp=10.83 | 3V3=99.68 | 3V3fpga=35.15 | Total=268.52
+2026-06-06 09:09:06.462 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.54 C | fail=0x05
+2026-06-06 09:09:06.464 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.62 | 2V5=18.75 | 2V5vpp=5.03 | 3V3=31.25 | 3V3fpga=13.54
+2026-06-06 09:09:06.465 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.34 | 2V5=42.87 | 2V5vpp=12.59 | 3V3=103.11 | 3V3fpga=44.69 | Total=285.60
+2026-06-06 09:09:08.462 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.50 C | fail=0x05
+2026-06-06 09:09:08.466 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.21 | 2V5=21.87 | 2V5vpp=4.46 | 3V3=31.62 | 3V3fpga=10.66
+2026-06-06 09:09:08.469 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.85 | 2V5=42.84 | 2V5vpp=11.15 | 3V3=104.36 | 3V3fpga=35.18 | Total=275.38
+2026-06-06 09:09:10.460 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.52 C | fail=0x05
+2026-06-06 09:09:10.461 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=69.60 | 2V5=19.09 | 2V5vpp=4.30 | 3V3=30.66 | 3V3fpga=9.00
+2026-06-06 09:09:10.462 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=83.52 | 2V5=42.86 | 2V5vpp=10.75 | 3V3=101.19 | 3V3fpga=29.69 | Total=268.01
+2026-06-06 09:09:12.460 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.57 C | fail=0x05
+2026-06-06 09:09:12.461 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=66.76 | 2V5=19.37 | 2V5vpp=4.29 | 3V3=31.42 | 3V3fpga=11.03
+2026-06-06 09:09:12.462 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=80.11 | 2V5=42.89 | 2V5vpp=10.73 | 3V3=103.67 | 3V3fpga=36.41 | Total=273.82
+2026-06-06 09:09:14.461 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.57 C | fail=0x05
+2026-06-06 09:09:14.463 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.77 | 2V5=21.19 | 2V5vpp=4.66 | 3V3=30.81 | 3V3fpga=12.48
+2026-06-06 09:09:14.476 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.32 | 2V5=42.89 | 2V5vpp=11.66 | 3V3=101.66 | 3V3fpga=41.17 | Total=278.70
+2026-06-06 09:09:16.461 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.57 C | fail=0x05
+2026-06-06 09:09:16.462 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=66.84 | 2V5=20.45 | 2V5vpp=4.81 | 3V3=30.55 | 3V3fpga=12.93
+2026-06-06 09:09:16.476 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=80.21 | 2V5=42.89 | 2V5vpp=12.03 | 3V3=100.82 | 3V3fpga=42.66 | Total=278.61
+2026-06-06 09:09:18.460 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.50 C | fail=0x05
+2026-06-06 09:09:18.461 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.84 | 2V5=18.37 | 2V5vpp=4.40 | 3V3=31.60 | 3V3fpga=8.48
+2026-06-06 09:09:18.475 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.41 | 2V5=42.84 | 2V5vpp=11.01 | 3V3=104.30 | 3V3fpga=27.98 | Total=267.53
+2026-06-06 09:09:20.462 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.52 C | fail=0x07
+2026-06-06 09:09:20.464 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=66.38 | 2V5=17.91 | 2V5vpp=4.58 | 3V3=31.02 | 3V3fpga=11.98
+2026-06-06 09:09:20.477 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=79.66 | 2V5=42.86 | 2V5vpp=11.46 | 3V3=102.37 | 3V3fpga=39.53 | Total=275.87
+2026-06-06 09:09:22.460 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.52 C | fail=0x05
+2026-06-06 09:09:22.461 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.27 | 2V5=22.51 | 2V5vpp=4.71 | 3V3=28.91 | 3V3fpga=11.52
+2026-06-06 09:09:22.476 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.92 | 2V5=42.86 | 2V5vpp=11.78 | 3V3=95.39 | 3V3fpga=38.03 | Total=269.97
+2026-06-06 09:09:24.462 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.57 C | fail=0x05
+2026-06-06 09:09:24.466 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.46 | 2V5=20.94 | 2V5vpp=4.28 | 3V3=30.89 | 3V3fpga=11.26
+2026-06-06 09:09:24.476 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.15 | 2V5=42.89 | 2V5vpp=10.70 | 3V3=101.95 | 3V3fpga=37.14 | Total=274.83
+2026-06-06 09:09:26.460 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.61 C | fail=0x05
+2026-06-06 09:09:26.461 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=66.94 | 2V5=16.97 | 2V5vpp=4.67 | 3V3=32.26 | 3V3fpga=14.14
+2026-06-06 09:09:26.476 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=80.33 | 2V5=42.92 | 2V5vpp=11.68 | 3V3=106.44 | 3V3fpga=46.65 | Total=288.02
+2026-06-06 09:09:28.491 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.52 C | fail=0x07
+2026-06-06 09:09:28.492 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.34 | 2V5=21.87 | 2V5vpp=4.83 | 3V3=30.21 | 3V3fpga=11.00
+2026-06-06 09:09:28.494 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.01 | 2V5=42.86 | 2V5vpp=12.07 | 3V3=99.70 | 3V3fpga=36.29 | Total=272.92
+2026-06-06 09:09:30.491 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.54 C | fail=0x05
+2026-06-06 09:09:30.492 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.78 | 2V5=20.47 | 2V5vpp=4.58 | 3V3=31.42 | 3V3fpga=13.40
+2026-06-06 09:09:30.493 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.53 | 2V5=42.87 | 2V5vpp=11.44 | 3V3=103.67 | 3V3fpga=44.24 | Total=284.75
+2026-06-06 09:09:32.491 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.57 C | fail=0x05
+2026-06-06 09:09:32.492 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.83 | 2V5=19.04 | 2V5vpp=4.64 | 3V3=30.27 | 3V3fpga=14.90
+2026-06-06 09:09:32.494 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.60 | 2V5=42.89 | 2V5vpp=11.60 | 3V3=99.89 | 3V3fpga=49.17 | Total=286.15
+2026-06-06 09:09:34.491 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.59 C | fail=0x05
+2026-06-06 09:09:34.492 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.79 | 2V5=20.42 | 2V5vpp=4.19 | 3V3=31.24 | 3V3fpga=8.98
+2026-06-06 09:09:34.493 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.34 | 2V5=42.91 | 2V5vpp=10.47 | 3V3=103.09 | 3V3fpga=29.64 | Total=267.45
+2026-06-06 09:09:36.492 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.61 C | fail=0x07
+2026-06-06 09:09:36.495 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.90 | 2V5=18.80 | 2V5vpp=4.66 | 3V3=31.41 | 3V3fpga=10.41
+2026-06-06 09:09:36.497 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.48 | 2V5=42.92 | 2V5vpp=11.65 | 3V3=103.64 | 3V3fpga=34.34 | Total=274.02
+2026-06-06 09:09:38.491 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.59 C | fail=0x05
+2026-06-06 09:09:38.492 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.68 | 2V5=21.03 | 2V5vpp=4.53 | 3V3=31.01 | 3V3fpga=10.87
+2026-06-06 09:09:38.493 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.22 | 2V5=42.91 | 2V5vpp=11.33 | 3V3=102.34 | 3V3fpga=35.87 | Total=273.67
+2026-06-06 09:09:40.491 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.59 C | fail=0x05
+2026-06-06 09:09:40.493 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=69.55 | 2V5=20.56 | 2V5vpp=4.64 | 3V3=32.26 | 3V3fpga=9.62
+2026-06-06 09:09:40.494 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=83.46 | 2V5=42.91 | 2V5vpp=11.60 | 3V3=106.44 | 3V3fpga=31.76 | Total=276.17
+2026-06-06 09:09:42.494 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.61 C | fail=0x05
+2026-06-06 09:09:42.497 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=69.34 | 2V5=20.30 | 2V5vpp=4.27 | 3V3=31.45 | 3V3fpga=9.11
+2026-06-06 09:09:42.499 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=83.21 | 2V5=42.92 | 2V5vpp=10.68 | 3V3=103.79 | 3V3fpga=30.07 | Total=270.66
+2026-06-06 09:09:42.746 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:927 (nascerr_sch_processCommand): Command received: WRITE
+2026-06-06 09:09:42.939 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:349 (nascerr_sch_expWriteTask): EXP_WRITE_TASK start  | id=1 block=0  nblocks=64  sch=1 ms  repeat=0  tick=1151486
+2026-06-06 09:09:47.884 | [INFO] ../Modules/NASCERR/Experiments/NASCERR_ImageProcessing.c:482 (nascerr_image_flash_write): [IMG_FLASH_WRITE] Post-encoding error injection applied to 131072 words
+2026-06-06 09:09:47.904 | [INFO] ../Modules/NASCERR/Experiments/NASCERR_ImageProcessing.c:487 (nascerr_image_flash_write): [IMG_FLASH_WRITE] Done: 262144 bytes → 131072 words written to SRAM (ecc=3)
+2026-06-06 09:09:48.059 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:451 (nascerr_sch_expReadTask): EXP_READ_TASK start  | id=1 block=0  nblocks=64  delay=1000 ms  tick=1156605
+2026-06-06 09:10:00.966 | [INFO] ../Modules/NASCERR/Experiments/NASCERR_ImageProcessing.c:641 (nascerr_image_ecc_avaliation): [IMG_ECC] words=131072  pixels=262144  data_flips=0  synd_only=0  ecc_fail=0  unmatch=0
+2026-06-06 09:10:00.971 |           bp_1b=0  bp_2b=0  bp_3b+=0
+2026-06-06 09:10:00.977 |           PSNR_raw=9999.00 dB  PSNR_ecc=9999.00 dB
+2026-06-06 09:10:01.232 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.66 C | fail=0x05
+2026-06-06 09:10:01.243 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.65 | 2V5=17.39 | 2V5vpp=4.22 | 3V3=30.81 | 3V3fpga=12.71
+2026-06-06 09:10:01.253 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.38 | 2V5=31.56 | 2V5vpp=10.56 | 3V3=101.69 | 3V3fpga=41.94 | Total=268.13
+2026-06-06 09:10:02.237 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.66 C | fail=0x07
+2026-06-06 09:10:02.241 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.30 | 2V5=25.51 | 2V5vpp=4.71 | 3V3=32.07 | 3V3fpga=10.66
+2026-06-06 09:10:02.245 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.96 | 2V5=31.56 | 2V5vpp=11.78 | 3V3=105.83 | 3V3fpga=35.16 | Total=266.29
+2026-06-06 09:10:04.226 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.66 C | fail=0x07
+2026-06-06 09:10:04.238 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=69.81 | 2V5=25.39 | 2V5vpp=4.58 | 3V3=30.69 | 3V3fpga=10.64
+2026-06-06 09:10:04.252 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=83.77 | 2V5=31.56 | 2V5vpp=11.44 | 3V3=101.28 | 3V3fpga=35.11 | Total=263.17
+2026-06-06 09:10:06.219 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.68 C | fail=0x07
+2026-06-06 09:10:06.221 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.36 | 2V5=24.56 | 2V5vpp=4.91 | 3V3=31.32 | 3V3fpga=10.29
+2026-06-06 09:10:06.235 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=80.83 | 2V5=31.58 | 2V5vpp=12.27 | 3V3=103.36 | 3V3fpga=33.95 | Total=261.99
+2026-06-06 09:10:08.224 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.71 C | fail=0x07
+2026-06-06 09:10:08.235 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=70.38 | 2V5=22.06 | 2V5vpp=4.57 | 3V3=31.35 | 3V3fpga=10.67
+2026-06-06 09:10:08.246 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=84.46 | 2V5=31.60 | 2V5vpp=11.42 | 3V3=103.47 | 3V3fpga=35.20 | Total=266.15
+2026-06-06 09:10:10.221 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.66 C | fail=0x07
+2026-06-06 09:10:10.233 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.67 | 2V5=24.74 | 2V5vpp=4.73 | 3V3=32.32 | 3V3fpga=11.66
+2026-06-06 09:10:10.271 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.20 | 2V5=31.56 | 2V5vpp=11.83 | 3V3=106.65 | 3V3fpga=38.47 | Total=269.72
+2026-06-06 09:10:12.223 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.66 C | fail=0x07
+2026-06-06 09:10:12.234 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.88 | 2V5=23.64 | 2V5vpp=4.69 | 3V3=31.01 | 3V3fpga=12.11
+2026-06-06 09:10:12.246 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.45 | 2V5=31.56 | 2V5vpp=11.73 | 3V3=102.34 | 3V3fpga=39.98 | Total=267.06
+2026-06-06 09:10:14.217 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.68 C | fail=0x07
+2026-06-06 09:10:14.233 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.70 | 2V5=25.51 | 2V5vpp=4.49 | 3V3=31.45 | 3V3fpga=9.97
+2026-06-06 09:10:14.251 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.24 | 2V5=31.58 | 2V5vpp=11.22 | 3V3=103.78 | 3V3fpga=32.90 | Total=260.72
+2026-06-06 09:10:16.224 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.71 C | fail=0x07
+2026-06-06 09:10:16.240 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=69.29 | 2V5=24.22 | 2V5vpp=4.60 | 3V3=30.38 | 3V3fpga=9.99
+2026-06-06 09:10:16.260 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=83.14 | 2V5=31.60 | 2V5vpp=11.51 | 3V3=100.26 | 3V3fpga=32.96 | Total=259.46
+2026-06-06 09:10:18.222 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.68 C | fail=0x07
+2026-06-06 09:10:18.237 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.35 | 2V5=24.21 | 2V5vpp=4.43 | 3V3=29.64 | 3V3fpga=9.97
+2026-06-06 09:10:18.248 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=80.82 | 2V5=31.58 | 2V5vpp=11.07 | 3V3=97.81 | 3V3fpga=32.89 | Total=254.17
+2026-06-06 09:10:20.232 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.71 C | fail=0x07
+2026-06-06 09:10:20.243 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.26 | 2V5=24.94 | 2V5vpp=4.65 | 3V3=31.07 | 3V3fpga=12.50
+2026-06-06 09:10:20.260 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=80.72 | 2V5=31.60 | 2V5vpp=11.62 | 3V3=102.52 | 3V3fpga=41.25 | Total=267.71
+2026-06-06 09:10:22.217 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.66 C | fail=0x07
+2026-06-06 09:10:22.253 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=66.72 | 2V5=23.45 | 2V5vpp=4.65 | 3V3=30.49 | 3V3fpga=11.35
+2026-06-06 09:10:22.265 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=80.06 | 2V5=31.56 | 2V5vpp=11.62 | 3V3=100.61 | 3V3fpga=37.45 | Total=261.30
+2026-06-06 09:10:24.218 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.68 C | fail=0x07
+2026-06-06 09:10:24.235 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.73 | 2V5=23.56 | 2V5vpp=4.53 | 3V3=31.01 | 3V3fpga=9.08
+2026-06-06 09:10:24.239 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.47 | 2V5=31.58 | 2V5vpp=11.32 | 3V3=102.32 | 3V3fpga=29.98 | Total=257.67
+2026-06-06 09:10:26.217 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.71 C | fail=0x07
+2026-06-06 09:10:26.251 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.06 | 2V5=25.52 | 2V5vpp=4.72 | 3V3=29.81 | 3V3fpga=12.21
+2026-06-06 09:10:26.264 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.68 | 2V5=31.60 | 2V5vpp=11.80 | 3V3=98.36 | 3V3fpga=40.30 | Total=263.73
+2026-06-06 09:10:28.222 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.73 C | fail=0x07
+2026-06-06 09:10:28.242 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.41 | 2V5=22.92 | 2V5vpp=4.39 | 3V3=30.43 | 3V3fpga=11.49
+2026-06-06 09:10:28.254 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=80.89 | 2V5=31.62 | 2V5vpp=10.99 | 3V3=100.43 | 3V3fpga=37.92 | Total=261.84
+2026-06-06 09:10:30.222 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.75 C | fail=0x07
+2026-06-06 09:10:30.240 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=69.36 | 2V5=26.79 | 2V5vpp=4.34 | 3V3=30.93 | 3V3fpga=8.89
+2026-06-06 09:10:30.252 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=83.24 | 2V5=31.63 | 2V5vpp=10.84 | 3V3=102.07 | 3V3fpga=29.32 | Total=257.09
+2026-06-06 09:10:32.233 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.75 C | fail=0x07
+2026-06-06 09:10:32.248 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.91 | 2V5=22.91 | 2V5vpp=4.45 | 3V3=31.15 | 3V3fpga=12.77
+2026-06-06 09:10:32.275 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.49 | 2V5=31.63 | 2V5vpp=11.14 | 3V3=102.79 | 3V3fpga=42.15 | Total=269.20
+2026-06-06 09:10:34.232 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.73 C | fail=0x07
+2026-06-06 09:10:34.234 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.69 | 2V5=26.49 | 2V5vpp=4.52 | 3V3=31.07 | 3V3fpga=12.21
+2026-06-06 09:10:34.236 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.23 | 2V5=31.62 | 2V5vpp=11.30 | 3V3=102.53 | 3V3fpga=40.30 | Total=266.98
+2026-06-06 09:10:36.231 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.73 C | fail=0x07
+2026-06-06 09:10:36.234 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.54 | 2V5=24.85 | 2V5vpp=4.33 | 3V3=30.11 | 3V3fpga=10.15
+2026-06-06 09:10:36.247 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.25 | 2V5=31.62 | 2V5vpp=10.82 | 3V3=99.36 | 3V3fpga=33.49 | Total=257.53
+2026-06-06 09:10:38.236 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.77 C | fail=0x07
+2026-06-06 09:10:38.248 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.04 | 2V5=24.22 | 2V5vpp=4.50 | 3V3=30.80 | 3V3fpga=8.22
+2026-06-06 09:10:38.260 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.64 | 2V5=31.64 | 2V5vpp=11.24 | 3V3=101.63 | 3V3fpga=27.11 | Total=253.28
+2026-06-06 09:10:40.233 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.80 C | fail=0x07
+2026-06-06 09:10:40.237 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.72 | 2V5=25.50 | 2V5vpp=4.40 | 3V3=31.30 | 3V3fpga=9.59
+2026-06-06 09:10:40.241 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.27 | 2V5=31.67 | 2V5vpp=11.00 | 3V3=103.28 | 3V3fpga=31.65 | Total=258.86
+2026-06-06 09:10:42.237 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.73 C | fail=0x07
+2026-06-06 09:10:42.246 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.54 | 2V5=25.97 | 2V5vpp=4.36 | 3V3=31.86 | 3V3fpga=8.07
+2026-06-06 09:10:42.258 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.25 | 2V5=31.62 | 2V5vpp=10.91 | 3V3=105.13 | 3V3fpga=26.63 | Total=256.55
+2026-06-06 09:10:44.233 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.73 C | fail=0x07
+2026-06-06 09:10:44.246 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=69.12 | 2V5=24.26 | 2V5vpp=4.38 | 3V3=30.91 | 3V3fpga=9.75
+2026-06-06 09:10:44.260 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.94 | 2V5=31.62 | 2V5vpp=10.95 | 3V3=102.00 | 3V3fpga=32.18 | Total=259.70
+2026-06-06 09:10:46.233 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.75 C | fail=0x07
+2026-06-06 09:10:46.237 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.42 | 2V5=22.92 | 2V5vpp=4.60 | 3V3=31.75 | 3V3fpga=11.48
+2026-06-06 09:10:46.241 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.10 | 2V5=31.63 | 2V5vpp=11.51 | 3V3=104.78 | 3V3fpga=37.87 | Total=267.89
+2026-06-06 09:10:48.237 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.80 C | fail=0x07
+2026-06-06 09:10:48.247 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=66.96 | 2V5=22.12 | 2V5vpp=4.72 | 3V3=30.95 | 3V3fpga=11.45
+2026-06-06 09:10:48.257 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=80.36 | 2V5=31.67 | 2V5vpp=11.80 | 3V3=102.15 | 3V3fpga=37.79 | Total=263.76
+2026-06-06 09:10:50.234 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.82 C | fail=0x07
+2026-06-06 09:10:50.237 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=69.21 | 2V5=25.64 | 2V5vpp=4.50 | 3V3=30.65 | 3V3fpga=11.98
+2026-06-06 09:10:50.241 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=83.05 | 2V5=31.68 | 2V5vpp=11.25 | 3V3=101.14 | 3V3fpga=39.54 | Total=266.65
+2026-06-06 09:10:52.233 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.77 C | fail=0x07
+2026-06-06 09:10:52.236 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.10 | 2V5=28.14 | 2V5vpp=4.32 | 3V3=30.72 | 3V3fpga=10.89
+2026-06-06 09:10:52.251 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.72 | 2V5=31.64 | 2V5vpp=10.80 | 3V3=101.39 | 3V3fpga=35.94 | Total=261.50
+2026-06-06 09:10:54.231 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.75 C | fail=0x07
+2026-06-06 09:10:54.234 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.49 | 2V5=23.72 | 2V5vpp=4.43 | 3V3=32.13 | 3V3fpga=11.33
+2026-06-06 09:10:54.245 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.19 | 2V5=31.63 | 2V5vpp=11.07 | 3V3=106.02 | 3V3fpga=37.38 | Total=268.28
+2026-06-06 09:10:56.234 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.77 C | fail=0x07
+2026-06-06 09:10:56.237 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.79 | 2V5=25.62 | 2V5vpp=4.55 | 3V3=30.77 | 3V3fpga=11.45
+2026-06-06 09:10:56.247 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.55 | 2V5=31.64 | 2V5vpp=11.39 | 3V3=101.53 | 3V3fpga=37.79 | Total=264.90
+2026-06-06 09:10:58.237 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.82 C | fail=0x07
+2026-06-06 09:10:58.247 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.38 | 2V5=23.26 | 2V5vpp=4.48 | 3V3=30.33 | 3V3fpga=9.65
+2026-06-06 09:10:58.260 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=80.86 | 2V5=31.68 | 2V5vpp=11.19 | 3V3=100.08 | 3V3fpga=31.86 | Total=255.67
+2026-06-06 09:11:00.231 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.84 C | fail=0x07
+2026-06-06 09:11:00.234 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=69.50 | 2V5=27.31 | 2V5vpp=4.80 | 3V3=30.58 | 3V3fpga=13.63
+2026-06-06 09:11:00.250 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=83.40 | 2V5=31.70 | 2V5vpp=12.00 | 3V3=100.90 | 3V3fpga=44.97 | Total=272.97
+2026-06-06 09:11:02.236 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.82 C | fail=0x07
+2026-06-06 09:11:02.247 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=69.85 | 2V5=24.94 | 2V5vpp=4.78 | 3V3=31.15 | 3V3fpga=11.85
+2026-06-06 09:11:02.260 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=83.82 | 2V5=31.68 | 2V5vpp=11.95 | 3V3=102.79 | 3V3fpga=39.10 | Total=269.34
+2026-06-06 09:11:04.230 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.75 C | fail=0x07
+2026-06-06 09:11:04.240 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.98 | 2V5=22.90 | 2V5vpp=4.38 | 3V3=30.08 | 3V3fpga=8.31
+2026-06-06 09:11:04.263 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.58 | 2V5=31.63 | 2V5vpp=10.94 | 3V3=99.25 | 3V3fpga=27.43 | Total=250.83
+2026-06-06 09:11:06.234 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.80 C | fail=0x07
+2026-06-06 09:11:06.238 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.25 | 2V5=24.66 | 2V5vpp=4.66 | 3V3=31.25 | 3V3fpga=15.11
+2026-06-06 09:11:06.242 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.90 | 2V5=31.67 | 2V5vpp=11.65 | 3V3=103.12 | 3V3fpga=49.87 | Total=278.21
+2026-06-06 09:11:08.236 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.80 C | fail=0x07
+2026-06-06 09:11:08.246 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.96 | 2V5=24.75 | 2V5vpp=4.37 | 3V3=29.27 | 3V3fpga=9.98
+2026-06-06 09:11:08.257 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.55 | 2V5=31.67 | 2V5vpp=10.92 | 3V3=96.60 | 3V3fpga=32.93 | Total=253.68
+2026-06-06 09:11:10.233 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.82 C | fail=0x07
+2026-06-06 09:11:10.238 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.35 | 2V5=24.84 | 2V5vpp=4.31 | 3V3=30.68 | 3V3fpga=9.56
+2026-06-06 09:11:10.268 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.02 | 2V5=31.68 | 2V5vpp=10.77 | 3V3=101.26 | 3V3fpga=31.56 | Total=257.29
+2026-06-06 09:11:12.230 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.82 C | fail=0x07
+2026-06-06 09:11:12.232 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.75 | 2V5=25.62 | 2V5vpp=4.58 | 3V3=30.26 | 3V3fpga=11.65
+2026-06-06 09:11:12.234 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.31 | 2V5=31.68 | 2V5vpp=11.46 | 3V3=99.84 | 3V3fpga=38.43 | Total=262.72
+2026-06-06 09:11:14.233 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.77 C | fail=0x07
+2026-06-06 09:11:14.237 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=69.27 | 2V5=22.89 | 2V5vpp=4.78 | 3V3=31.15 | 3V3fpga=13.25
+2026-06-06 09:11:14.248 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=83.13 | 2V5=31.64 | 2V5vpp=11.95 | 3V3=102.79 | 3V3fpga=43.74 | Total=273.24
+2026-06-06 09:11:16.230 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.77 C | fail=0x07
+2026-06-06 09:11:16.232 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=67.79 | 2V5=25.72 | 2V5vpp=5.02 | 3V3=31.20 | 3V3fpga=13.04
+2026-06-06 09:11:16.239 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=81.35 | 2V5=31.64 | 2V5vpp=12.54 | 3V3=102.96 | 3V3fpga=43.03 | Total=271.53
+2026-06-06 09:11:18.235 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.77 C | fail=0x07
+2026-06-06 09:11:18.246 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.44 | 2V5=22.10 | 2V5vpp=4.34 | 3V3=30.30 | 3V3fpga=9.17
+2026-06-06 09:11:18.259 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.13 | 2V5=31.64 | 2V5vpp=10.86 | 3V3=99.97 | 3V3fpga=30.25 | Total=254.86
+2026-06-06 09:11:20.230 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.82 C | fail=0x07
+2026-06-06 09:11:20.231 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.59 | 2V5=24.51 | 2V5vpp=4.48 | 3V3=30.86 | 3V3fpga=8.89
+2026-06-06 09:11:20.232 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.31 | 2V5=31.68 | 2V5vpp=11.21 | 3V3=101.84 | 3V3fpga=29.32 | Total=256.36
+2026-06-06 09:11:22.229 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.80 C | fail=0x07
+2026-06-06 09:11:22.231 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=66.42 | 2V5=24.48 | 2V5vpp=4.35 | 3V3=31.12 | 3V3fpga=8.96
+2026-06-06 09:11:22.232 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=79.70 | 2V5=31.67 | 2V5vpp=10.87 | 3V3=102.69 | 3V3fpga=29.57 | Total=254.51
+2026-06-06 09:11:24.229 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.80 C | fail=0x07
+2026-06-06 09:11:24.230 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=66.93 | 2V5=21.48 | 2V5vpp=4.72 | 3V3=29.24 | 3V3fpga=10.60
+2026-06-06 09:11:24.231 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=80.31 | 2V5=31.67 | 2V5vpp=11.81 | 3V3=96.49 | 3V3fpga=34.96 | Total=255.24
+2026-06-06 09:11:26.229 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.77 C | fail=0x07
+2026-06-06 09:11:26.230 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.93 | 2V5=20.87 | 2V5vpp=4.29 | 3V3=30.20 | 3V3fpga=9.37
+2026-06-06 09:11:26.231 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.71 | 2V5=31.64 | 2V5vpp=10.72 | 3V3=99.66 | 3V3fpga=30.93 | Total=255.66
+2026-06-06 09:11:28.229 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.82 C | fail=0x07
+2026-06-06 09:11:28.230 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=66.46 | 2V5=22.43 | 2V5vpp=4.43 | 3V3=30.64 | 3V3fpga=9.65
+2026-06-06 09:11:28.231 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=79.75 | 2V5=31.68 | 2V5vpp=11.07 | 3V3=101.12 | 3V3fpga=31.85 | Total=255.46
+2026-06-06 09:11:30.230 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.84 C | fail=0x07
+2026-06-06 09:11:30.233 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.51 | 2V5=24.28 | 2V5vpp=4.45 | 3V3=31.30 | 3V3fpga=11.11
+2026-06-06 09:11:30.235 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.21 | 2V5=31.70 | 2V5vpp=11.13 | 3V3=103.28 | 3V3fpga=36.67 | Total=264.99
+2026-06-06 09:11:32.230 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:642 (nascerr_sch_hwCheckTask): [HW] T=29.87 C | fail=0x07
+2026-06-06 09:11:32.231 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:643 (nascerr_sch_hwCheckTask): [HW] I(mA): 1V2=68.64 | 2V5=26.55 | 2V5vpp=4.52 | 3V3=32.15 | 3V3fpga=9.72
+2026-06-06 09:11:32.232 | [INFO] ../Modules/NASCERR/Application/NASCERR_Scheduler.c:644 (nascerr_sch_hwCheckTask): [HW] P(mW): 1V2=82.36 | 2V5=31.72 | 2V5vpp=11.30 | 3V3=106.10 | 3V3fpga=32.07 | Total=263.55
+# ------------------------------------------------------------
+# Encerrada em 2026-06-06T09:11:33
+# Duração: 188.4s | linhas: 266 | erros: 0 | psnr: 1 | info: 264
+# ============================================================
+

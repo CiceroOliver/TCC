@@ -1,0 +1,11 @@
+../Core/Src/uart_handler.c:38:6:UART_Init_Bootreceive	16	static
+../Core/Src/uart_handler.c:51:9:UART_CheckTimeout	24	static
+../Core/Src/uart_handler.c:68:6:UART_IRQHandler	24	static
+../Core/Src/uart_handler.c:94:6:UART_receive	8	static
+../Core/Src/uart_handler.c:110:18:UART_Available	16	static
+../Core/Src/uart_handler.c:137:6:UART_ImgDMA_Init	32	static
+../Core/Src/uart_handler.c:159:6:UART_RegisterRxEventCallback	16	static
+../Core/Src/uart_handler.c:164:6:UART_RegisterErrorCallback	16	static
+../Core/Src/uart_handler.c:170:6:HAL_UARTEx_RxEventCallback	16	static
+../Core/Src/uart_handler.c:177:6:HAL_UART_ErrorCallback	16	static
+../Core/Src/uart_handler.c:192:9:UART_Write	560	static

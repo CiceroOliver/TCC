@@ -1,0 +1,11 @@
+../Modules/Database/NASCERR_DB.c:60:15:nascerr_db_init	4
+../Modules/Database/NASCERR_DB.c:98:9:nascerr_db_readHeader	7
+../Modules/Database/NASCERR_DB.c:139:9:nascerr_db_defaultHeader	2
+../Modules/Database/NASCERR_DB.c:160:9:nascerr_db_updateHeader	2
+../Modules/Database/NASCERR_DB.c:184:6:nascerr_db_updateBootVersion	1
+../Modules/Database/NASCERR_DB.c:200:14:nascerr_db_writeBootData	3
+../Modules/Database/NASCERR_DB.c:231:9:nascerr_db_readBootData	5
+../Modules/Database/NASCERR_DB.c:267:9:nascerr_db_clearBootArea	2
+../Modules/Database/NASCERR_DB.c:294:9:nascerr_db_commitHeader	2
+../Modules/Database/NASCERR_DB.c:317:6:nascerr_db_updateBootSha	1
+../Modules/Database/NASCERR_DB.c:337:6:nascerr_db_loadDefaultHeader	5

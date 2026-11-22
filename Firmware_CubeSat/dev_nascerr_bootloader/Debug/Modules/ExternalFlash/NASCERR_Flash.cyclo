@@ -1,0 +1,6 @@
+../Modules/ExternalFlash/NASCERR_Flash.c:49:15:nascerr_flash_init	2
+../Modules/ExternalFlash/NASCERR_Flash.c:70:15:nascerr_flash_eraseArea	11
+../Modules/ExternalFlash/NASCERR_Flash.c:150:15:nascerr_flash_eraseAll	3
+../Modules/ExternalFlash/NASCERR_Flash.c:190:14:nascerr_flash_writeAddress	6
+../Modules/ExternalFlash/NASCERR_Flash.c:274:14:nascerr_flash_flush	9
+../Modules/ExternalFlash/NASCERR_Flash.c:381:14:nascerr_flash_readAddress	12

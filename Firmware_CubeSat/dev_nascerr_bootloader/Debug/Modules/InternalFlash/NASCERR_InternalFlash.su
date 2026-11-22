@@ -1,0 +1,5 @@
+../Modules/InternalFlash/NASCERR_InternalFlash.c:50:9:nascerr_flash_write_words	104	dynamic
+../Modules/InternalFlash/NASCERR_InternalFlash.c:97:9:nascerr_flash_write_bytes	136	dynamic
+../Modules/InternalFlash/NASCERR_InternalFlash.c:153:9:nascerr_flash_write_doubleword	32	static
+../Modules/InternalFlash/NASCERR_InternalFlash.c:185:6:nascerr_flash_read	32	static
+../Modules/InternalFlash/NASCERR_InternalFlash.c:206:9:nascerr_flash_erase_pages	64	static,ignoring_inline_asm

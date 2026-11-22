@@ -1,0 +1,11 @@
+../Modules/NASCERR/InternalFlash/NASCERR_InternalFlash.c:49:9:nascerr_flash_log_append	40	static
+../Modules/NASCERR/InternalFlash/NASCERR_InternalFlash.c:95:9:nascerr_flash_init_log_buffer	4	static
+../Modules/NASCERR/InternalFlash/NASCERR_InternalFlash.c:113:9:nascerr_flash_reset_log_buffer	4	static
+../Modules/NASCERR/InternalFlash/NASCERR_InternalFlash.c:129:10:nascerr_flash_get_log_occupied_size	4	static
+../Modules/NASCERR/InternalFlash/NASCERR_InternalFlash.c:144:10:nascerr_flash_get_log_address	16	static
+../Modules/NASCERR/InternalFlash/NASCERR_InternalFlash.c:164:9:nascerr_flash_write_words	104	dynamic
+../Modules/NASCERR/InternalFlash/NASCERR_InternalFlash.c:211:9:nascerr_flash_write_bytes	136	dynamic
+../Modules/NASCERR/InternalFlash/NASCERR_InternalFlash.c:267:9:nascerr_flash_write_doubleword	32	static
+../Modules/NASCERR/InternalFlash/NASCERR_InternalFlash.c:299:6:nascerr_flash_read	32	static
+../Modules/NASCERR/InternalFlash/NASCERR_InternalFlash.c:320:9:nascerr_flash_erase_pages	72	static,ignoring_inline_asm
+../Modules/NASCERR/InternalFlash/NASCERR_InternalFlash.c:396:9:nascerr_flash_write_logs	16	static

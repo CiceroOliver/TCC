@@ -1,0 +1,7 @@
+../Modules/NASCERR/Bootloader/NASCERR_BootInterface.c:40:16:uart_receive_data	16	static
+../Modules/NASCERR/Bootloader/NASCERR_BootInterface.c:61:16:i2c_receive_data	16	static
+../Modules/NASCERR/Bootloader/NASCERR_BootInterface.c:86:16:uart_send_data	16	static
+../Modules/NASCERR/Bootloader/NASCERR_BootInterface.c:100:16:i2c_send_data	16	static
+../Modules/NASCERR/Bootloader/NASCERR_BootInterface.c:121:6:nascerr_boot_comm_init	16	static
+../Modules/NASCERR/Bootloader/NASCERR_BootInterface.c:143:9:nascerr_boot_comm_receive	16	static
+../Modules/NASCERR/Bootloader/NASCERR_BootInterface.c:161:9:nascerr_boot_comm_send	16	static

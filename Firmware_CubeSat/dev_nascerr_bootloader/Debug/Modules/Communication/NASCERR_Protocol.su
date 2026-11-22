@@ -1,0 +1,6 @@
+../Modules/Communication/NASCERR_Protocol.c:77:6:nascerr_protocol_init	16	static
+../Modules/Communication/NASCERR_Protocol.c:95:6:nascerr_protocol_commInit	16	static
+../Modules/Communication/NASCERR_Protocol.c:113:19:nascerr_protocol_poll	32	static
+../Modules/Communication/NASCERR_Protocol.c:209:19:nascerr_protocol_send	16	static
+../Modules/Communication/NASCERR_Protocol.c:227:19:nascerr_protocol_receive	16	static
+../Modules/Communication/NASCERR_Protocol.c:244:9:protocol_checkAccess	24	static

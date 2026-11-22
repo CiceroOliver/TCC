@@ -1,0 +1,4 @@
+../Modules/Utils/NASCERR_SysTime.c:49:16:nascerr_systimer	24	static
+../Modules/Utils/NASCERR_SysTime.c:83:6:nascerr_systimer_reset	16	static
+../Modules/Utils/NASCERR_SysTime.c:98:6:nascerr_systimer_refresh	4	static
+../Modules/Utils/NASCERR_SysTime.c:109:9:systimer_delta_value	24	static

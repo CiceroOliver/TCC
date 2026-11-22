@@ -1,0 +1,11 @@
+../Modules/Database/NASCERR_DB.c:60:15:nascerr_db_init	24	static
+../Modules/Database/NASCERR_DB.c:98:9:nascerr_db_readHeader	32	static
+../Modules/Database/NASCERR_DB.c:139:9:nascerr_db_defaultHeader	40	static
+../Modules/Database/NASCERR_DB.c:160:9:nascerr_db_updateHeader	40	static
+../Modules/Database/NASCERR_DB.c:184:6:nascerr_db_updateBootVersion	16	static
+../Modules/Database/NASCERR_DB.c:200:14:nascerr_db_writeBootData	56	static
+../Modules/Database/NASCERR_DB.c:231:9:nascerr_db_readBootData	48	static
+../Modules/Database/NASCERR_DB.c:267:9:nascerr_db_clearBootArea	8	static
+../Modules/Database/NASCERR_DB.c:294:9:nascerr_db_commitHeader	32	static
+../Modules/Database/NASCERR_DB.c:317:6:nascerr_db_updateBootSha	24	static
+../Modules/Database/NASCERR_DB.c:337:6:nascerr_db_loadDefaultHeader	32	static
